@@ -8,6 +8,9 @@
 
 def make_xo_data(N_dots, initial_id, x_half_width, radius, box_half_width, jitter, rn_seed, debug):
     
+    import pandas as pd
+    import numpy as np
+
     #generate dataframe and initialize records' ids
     df = pd.DataFrame()
     df.index.name = 'idx'
