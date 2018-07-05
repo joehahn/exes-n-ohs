@@ -43,7 +43,7 @@ import pandas as pd
 def make_xo_df(N_dots, initial_id, x_half_width, radius, box_half_width, jitter):
     #generate list of xo dictionaries
     xo_list = []
-    for id in range(N_dots):
+    for id in initial_id + np.arange(N_dots):
         xo = make_xo_dict(x_half_width, radius, box_half_width, jitter, id=id)
         xo_list += [xo]
     #generate dataframe and initialize records' ids
