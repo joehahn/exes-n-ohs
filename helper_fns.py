@@ -38,7 +38,7 @@ def make_xo_dict(x_half_width, radius, box_half_width, jitter, id=-1):
     xo = {'id':id, 'x':xn, 'y':yn, 'r':r, 'angle':angle, 'class':dot_class}
     return xo
 
-#generate datafraame containing N_dots records
+#generate dataframe containing N_dots records
 import pandas as pd
 def make_xo_df(N_dots, initial_id, x_half_width, radius, box_half_width, jitter):
     #generate list of xo dictionaries
