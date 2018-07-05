@@ -6,11 +6,37 @@
 #
 #these helper functions are called by something.ipynb
 
-def make_xo_data(N_dots, initial_id, x_half_width, radius, box_half_width, jitter, rn_seed, debug):
-    
-    import pandas as pd
-    import numpy as np
+import numpy as np
+rn_state = np.random.RandomState(seed=rn_seed)
+def make_xo_dict(x_half_width, radius, box_half_width, jitter, id=-1):
+    #get dot's cartesian coordinates
+    x = np.random.uniform(low=-box_half_width, high=box_half_width)
+    y = np.random.uniform(low=-box_half_width, high=box_half_width)
+    #get dot's class
+    dot_class = 'B'
+    r = np.sqrt(x**2 + y**2)
+    if (r < radius):
+        dot_class = 'O'
+    if (np.abs(x) < x_half_width) or (np.abs(y) < x_half_width):
+        dot_class = 'X'
+    #rotate coordinate system by 45 degrees
+    rot_angle = np.pi/4.0
+    c = np.cos(rot_angle)
+    s = np.sin(rot_angle)
+    xr =  x*c + y*s
+    yr = -x*s + y*c
+    #add gaussian noise aka jitter to dots' positions
+    xn = xr + np.random.normal(scale=jitter)
+    yn = yr + np.random.normal(scale=jitter)
+    #compute dot's polar coordinates
+    r = np.sqrt(xn**2 + yn**2)
+    angle = np.arctan2(yn, xn)
+    xo = {'id':id, 'x':xn, 'y':yn, 'r':r, 'angle':angle, 'class':dot_class}
+    return xo
 
+import pandas as pd
+def make_xo_df(N_dots, initial_id, x_half_width, radius, box_half_width, jitter, rn_seed, debug=debug):
+    
     #generate dataframe and initialize records' ids
     df = pd.DataFrame()
     df.index.name = 'idx'
