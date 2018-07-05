@@ -6,9 +6,12 @@
 #
 #these helper functions are called by something.ipynb
 
+#do the following before importing this
+#import numpy as np
+#import pandas as pd
+#rn_state = np.random.RandomState(seed=rn_seed)
+
 #generate a dict containing a single record's facts: id, coordinates, class etc
-import numpy as np
-rn_state = np.random.RandomState(seed=rn_seed)
 def make_xo_dict(x_half_width, radius, box_half_width, jitter, id=-1):
     #get dot's cartesian coordinates
     x = np.random.uniform(low=-box_half_width, high=box_half_width)
@@ -36,7 +39,6 @@ def make_xo_dict(x_half_width, radius, box_half_width, jitter, id=-1):
     return xo
 
 #generate datafraame containing N_dots records
-import pandas as pd
 def make_xo_df(N_dots, initial_id, x_half_width, radius, box_half_width, jitter):
     #generate list of xo dictionaries
     xo_list = []
