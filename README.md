@@ -22,15 +22,16 @@ red O class, or the blue background B class. To produce this plot, execute the
 _decision_boundaries.ipynb_ notebook to generate the (x,y) data and to 
 plot this system's decision boundaries.
 
-### classifying noisy data 
+### classifying noisy data
 
 To make things more interesting and challenging, use the _svm_model.ipynb_ notebook
 to add considerable noise to the pristine data shown above:<br />
 ![](figs/training_data.png)<br />
-Note that the system's X,O,B structure is still preserved despite considerable
-bleed between the adjacent classes. This notebook then trains an SVM classifier to predict
-X,O,B membership using a similarly noise sample of training data. That model's
-hyperparameters are optimized, and the resulting classifier has
+Note that the system's X,O,B structure is still preserved despite the noise that
+causes considerable bleed between the adjacent classes. 
+This notebook then trains an SVM classifier to predict
+X,O,B membership using a similarly noisy sample of training data. The notebool
+also optimizes that model's hyperparameters, and the resulting classifier has
 an accuracy of about 67%.
 
 ### build simple MLP neural net using keras
