@@ -43,7 +43,8 @@ of the green X, and also mis-classifies actual green X records as nearby red O r
 
 Now build and then train a simple multilayer perceptron (MLP) model using
 keras. Keras is my preferred tensorflow-based library, mostly because it is much
-easier to build and deploy neural network models using keras than other such library.
+easier to build and deploy neural network models using keras than with any
+other such library.
 tbc...
 
 ### todos
