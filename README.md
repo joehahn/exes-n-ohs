@@ -16,10 +16,20 @@ All records in this dataset include a simple pair of (x,y) coordinates, and each
 in this dataset is then labelled as a members of either the X, O, or B classes, depending
 upon where those (x,y) coordinates reside within following decision boundary:<br />
 ![](figs/decision_boundary.png)<br />
-Execute the _decision_boundaries.ipynb_ notebook to generate a sample of (x,y) coordinates
-and to plot this system's decision boundaries
+noting that a record is designated as a member of the X class if its (x,y) coordinates
+place it within the green X, or is perhaps a member of the red O class, or blue background
+B class. To generate this plot, execute the 
+_decision_boundaries.ipynb_ notebook to manufacture the (x,y) data and to 
+plot the system's decision boundaries.
 
-
+To make things more interesting and challenging, use the _svm_model.ipynb_ notebook
+to add considerable noise to the pristine data seen above:<br />
+![](figs/training_data.png)<br />
+noting that system's X,O,B structure is still preserved despite considerable
+bleed between adjacent classes. This notebook then trains an SVM classifier to predict
+X,O,B membership on a similarly noise sample of training data. That model's
+hyperparameters are optimized,  acheives
+and accuracy of about 70%
 
 ### notes
 
