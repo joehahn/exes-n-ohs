@@ -33,6 +33,10 @@ X,O,B membership using a similarly noise sample of training data. That model's
 hyperparameters are optimized, and the resulting classifier has
 an accuracy of about 67%.
 
+### using keras to build simple MLP neural net
+
+blah blah blah...
+
 ### notes
 
 1 blah blah blah...
