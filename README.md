@@ -46,8 +46,9 @@ keras. Keras is my preferred tensorflow-based library, mostly because it is much
 easier to build and deploy neural network models using keras than other such library.
 tbc...
 
-### notes
+### todos
 
-1 blah blah blah...
+1 train the SVM model on polar coordinates rather than cartesian coordinates,
+i suspect model accuracy will improve
 
 
