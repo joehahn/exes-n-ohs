@@ -22,6 +22,8 @@ red O class, or perhaps the blue background class B. To generate this plot, exec
 _decision_boundaries.ipynb_ notebook to manufacture the (x,y) data and to 
 plot the system's decision boundaries.
 
+### classifying noisy data
+
 To make things more interesting and challenging, use the _svm_model.ipynb_ notebook
 to add considerable noise to the pristine data seen above:<br />
 ![](figs/training_data.png)<br />
