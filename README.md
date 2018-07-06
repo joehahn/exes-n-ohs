@@ -39,7 +39,7 @@ Comparing the model-inferred decision boundary (above) to the system's actual de
 boundary (topmost plot) shows that the SVM model consistently overestimates the width
 of the green X, and it also mis-classifies some actual green X records as nearby red O records.
 
-### build simple MLP neural net using keras
+### build MLP neural net with keras
 
 Now build and then train a simple multilayer perceptron (MLP) model using
 keras. Keras is my preferred tensorflow-based library, mostly because it is much
