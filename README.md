@@ -30,9 +30,11 @@ to add considerable noise to the pristine data shown above:<br />
 Note that the system's X,O,B structure is still preserved despite the noise that
 causes considerable bleed between the adjacent classes. 
 This notebook then trains an SVM classifier to predict
-X,O,B membership using a similarly noisy sample of training data. The notebool
-also optimizes that model's hyperparameters, and the resulting classifier has
-an accuracy of about 67%.
+X,O,B membership using a similarly noisy sample of training data. The notebook
+also optimizes that model's hyperparameters, and that optimized classifier achieves
+an accuracy of about 70%. The model's inferred decision boundary is shown
+below:<br />
+![](figs/svm_decision_boundary.png)<br />
 
 ### build simple MLP neural net using keras
 
