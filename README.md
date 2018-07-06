@@ -15,7 +15,9 @@ to that same data.
 All records in this dataset include a simple pair of (x,y) coordinates, and each record
 in this dataset is then labelled as a members of either the X, O, or B classes, depending
 upon where those (x,y) coordinates reside with following decision boundary:
-![](figs/decision_boundary.png)<br />
+
+![](figs/decision_boundary.png)
+
 Execute the decision_boundaries.ipynb notebook to generate a sample of (x,y) coordinates
 and to plot this system's decision boundaries
 
