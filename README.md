@@ -25,7 +25,7 @@ plot this system's decision boundaries.
 ### classifying noisy data
 
 To make things more interesting and challenging, execute the _svm_model.ipynb_ notebook
-to add considerable noise to the pristine data shown above:<br />
+to add considerable noise to the pristine mock data shown above:<br />
 ![](figs/training_data.png)<br />
 Note that the system's X,O,B structure is still preserved despite the noise that
 causes considerable bleed between adjacent classes. 
