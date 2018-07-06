@@ -27,7 +27,8 @@ plot this system's decision boundaries.
 To make things more interesting and challenging, execute the _svm_model.ipynb_ notebook
 to add considerable noise to the pristine mock data shown above:<br />
 ![](figs/training_data.png)<br />
-Note that the system's X,O,B structure is still preserved despite the noise that
+Look closely to confirm
+that the system's X,O,B structure is still preserved despite the noise that
 causes considerable bleed between adjacent classes. 
 This notebook then trains an SVM classifier to predict
 X,O,B membership using a similarly noisy sample of training data. The notebook
