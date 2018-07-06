@@ -6,18 +6,18 @@ joe.hahn@oracle.com,<br />
 git branch=master
 
 This demo performs a simple machine-learning experiment in the datascience.com
-cloud, using scikit-learn to fit an support vector machine (SVM) model
-to a simple but very noisy dataset, and then keras to fit a simple neural-net model
+cloud, using scikit-learn to fit a support vector machine (SVM) model
+to a simple but rather noisy dataset, and then keras to fit a simple neural-net model
 to that same data.
 
 ### decision boundaries
 
-All records in this dataset are simple pairs of (x,y) coordinates, and each record
-in this dataset is labelled as a members of either the X, O, or B classes, with
-membership determined by the following decision boundary
+All records in this dataset include a simple pair of (x,y) coordinates, and each record
+in this dataset is then labelled as a members of either the X, O, or B classes, depending
+upon where those (x,y) coordinates reside with following decision boundary:
 ![](figs/decision_boundary.png)<br />
-that depends only on each record's 
-execute the decision_boundaries.ipynb notebook to view the system's decision boundaries:
+Execute the decision_boundaries.ipynb notebook to generate a sample of (x,y) coordinates
+and to plot this system's decision boundaries
 
 
 
