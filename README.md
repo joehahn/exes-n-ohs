@@ -35,7 +35,7 @@ also optimizes that model's hyperparameters, and that optimized classifier achie
 an accuracy of about 70%, with the model's inferred decision boundary shown below:<br />
 ![](figs/svm_decision_boundary.png)<br />
 Comparing the model-inferred decision boundary (above) to the system's actual decision
-boundary (topmost plot) shows that this SVM model consistently overestimates the width
+boundary (topmost plot) shows that the SVM model consistently overestimates the width
 of the green X, and also mis-classifies actual green X records as nearby red O records.
 
 ### build simple MLP neural net using keras
