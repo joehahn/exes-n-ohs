@@ -10,6 +10,15 @@ in the cloud, first using scikit-learn to fit a support vector machine (SVM) mod
 to a simple but rather noisy dataset, and then keras to fit a simple neural-net model
 to that same data.
 
+### session settings:
+
+Use these setting when launching a session:
+
+    tool=jupyter
+    compute resource=m4.xlarge
+    environment=keras & tensorflow
+
+
 ### decision boundary
 
 All records in this dataset are simple pairs of (x,y) coordinates, with each record
