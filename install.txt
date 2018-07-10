@@ -1,1 +1,1 @@
-pip install jupyter-tensorboard
+/usr/local/bin/pip install jupyter-tensorboard
