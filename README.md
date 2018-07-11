@@ -58,7 +58,13 @@ following results.
 
 The following summary report details the MLP model built here:<br />
 ![](figs/mlp_summary.png)<br />
-which shows that this neural net has five layers...
+which shows that this neural net has five layers, an input layer having N=2 neurons
+that recieve each record's (x,y) coordinates, three densely-connected
+hidden layers composed of N=10, 60, and then 20 neurons,
+followed by an N=3 neuron layer that outputs
+each record's class probabilities. And to manage any overfitting, dropout
+layers are also sandwiched between each of the above dense layers
+with dropout_fraction=0.1
 
 ### notes
 
