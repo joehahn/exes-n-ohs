@@ -69,6 +69,13 @@ and that trained  model is then used to compute its decision boundary:<br />
 ![](figs/mlp_decision_boundary.png)<br />
 which looks quite similar to that produced by the SVM model.
 
+### todo
+
+1 publish a report or dashboard
+
+2 make model predictions visible via API
+
+3 add hashed password
 
 ### notes
 
