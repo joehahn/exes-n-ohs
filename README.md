@@ -54,16 +54,20 @@ Now build and then train a simple multilayer perceptron (MLP) model using
 keras. Keras is my preferred tensorflow-based library, mostly because it is much
 easier to build and deploy neural network models using keras than with any
 other such library. Execute the _mlp_model.ipynb_ notebook to generate
-the following summary report that details the MLP model built here:<br />
+the following summary report that describes the MLP model built here:<br />
 ![](figs/mlp_summary.png)<br />
 which shows that this neural net has five layers, an input layer having N=2 neurons
-that recieve each record's (x,y) coordinates, three densely-connected
+that receive each record's (x,y) coordinates, three densely-connected
 hidden layers composed of N=10, 60, and then 20 neurons,
 followed by an N=3 neuron layer that outputs
 each record's class probabilities. And to manage any overfitting, dropout
 layers are also sandwiched between each of the above dense layers
-with dropout_fraction=0.1
+with dropout_fraction=0.1. The trained MLP model is then used to compute its decision
+boundary:<br />
+![](figs/mlp_decision_boundary.png)<br />
+which looks quite similar to that produced by the SVM model.
 
+The model is then trained on a much larger sample of records, 10 million
 ### notes
 
 1 train the SVM model on polar coordinates rather than cartesian coordinates,
