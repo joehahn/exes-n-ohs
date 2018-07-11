@@ -53,28 +53,52 @@ of the green X, and it also mis-classifies some actual green X records as nearby
 Now build and then train a simple multilayer perceptron (MLP) model using
 keras. Keras is my preferred tensorflow-based library, mostly because it is much
 easier to build and deploy neural network models using keras than with any
-other such library.
-tbc...
+other such library. Execute the _mlp_model.ipynb_ notebook to generate
+the following summary report that describes the MLP model built here:<br />
+![](figs/mlp_summary.png)<br />
+which shows that this neural net has five layers, an input layer having N=2 neurons
+that receive each record's (x,y) coordinates, three densely-connected
+hidden layers composed of N=10, 60, and then 20 neurons,
+followed by an N=3 neuron layer that outputs
+each record's class probabilities. And to manage any overfitting, dropout
+layers are also sandwiched between each of the above dense layers
+with dropout_fraction=0.1
 
-### todos
+The MLP model is then trained on a much larger sample of records, 10 million,
+and that trained  model is then used to compute its decision boundary:<br />
+![](figs/mlp_decision_boundary.png)<br />
+which looks quite similar to that produced by the SVM model. However the MLP model's
+accuracy, 61%, is a bit lower than SVM.
+
+Adding another layer might boost MLP accuracy on the green X class. Or maybe
+boosting the green's representation in the training dataset. Still in progress...
+
+### todo
+
+1 publish a report or dashboard
+
+2 make model predictions visible via API
+
+3 add hashed password
+
+4 try training model on polar rather than cartesian coordinates, that might boost
+model accuracy
+
+### notes
 
 1 train the SVM model on polar coordinates rather than cartesian coordinates,
 i suspect model accuracy will improve
 
-2 install jupyter-tensorboard?
+2 install jupyter-tensorboard ...didnt work
 
     pip install jupyter-tensorboard
-
-3 get external ip address:
-
+    #get external ip address:
     pip install ipgetter
     python -m ipgetter 
-
-4 start tensorboard:
-
-     cd exes-n-ohs
-     tensorboard --logdir=tf_logs/
-     http://52.89.99.15:6006
+    #start tensorboard:
+    cd exes-n-ohs
+    tensorboard --logdir=tf_logs/
+    http://52.89.99.15:6006
 
 
 
