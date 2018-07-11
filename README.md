@@ -67,7 +67,11 @@ with dropout_fraction=0.1
 The MLP model is then trained on a much larger sample of records, 10 million,
 and that trained  model is then used to compute its decision boundary:<br />
 ![](figs/mlp_decision_boundary.png)<br />
-which looks quite similar to that produced by the SVM model.
+which looks quite similar to that produced by the SVM model. However the MLP model's
+accuracy, 61%, is a bit lower than SVM.
+
+Adding another layer might boost MLP accuracy on the green X class. Or maybe
+boosting the green's representation in the training dataset. Still in progress...
 
 ### todo
 
@@ -76,6 +80,9 @@ which looks quite similar to that produced by the SVM model.
 2 make model predictions visible via API
 
 3 add hashed password
+
+4 try training model on polar rather than cartesian coordinates, that might boost
+model accuracy
 
 ### notes
 
