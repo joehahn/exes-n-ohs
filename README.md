@@ -53,28 +53,28 @@ of the green X, and it also mis-classifies some actual green X records as nearby
 Now build and then train a simple multilayer perceptron (MLP) model using
 keras. Keras is my preferred tensorflow-based library, mostly because it is much
 easier to build and deploy neural network models using keras than with any
-other such library.
-tbc...
+other such library, and execute the _mlp_model.ipynb_ notebook to generate the
+following results.
 
-### todos
+The following summary report details the MLP model built here:<br />
+![](figs/mlp_summary.png)<br />
+which shows that this neural net has five layers...
+
+### notes
 
 1 train the SVM model on polar coordinates rather than cartesian coordinates,
 i suspect model accuracy will improve
 
-2 install jupyter-tensorboard?
+2 install jupyter-tensorboard ...didnt work
 
     pip install jupyter-tensorboard
-
-3 get external ip address:
-
+    #get external ip address:
     pip install ipgetter
     python -m ipgetter 
-
-4 start tensorboard:
-
-     cd exes-n-ohs
-     tensorboard --logdir=tf_logs/
-     http://52.89.99.15:6006
+    #start tensorboard:
+    cd exes-n-ohs
+    tensorboard --logdir=tf_logs/
+    http://52.89.99.15:6006
 
 
 
