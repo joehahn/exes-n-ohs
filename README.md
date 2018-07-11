@@ -61,4 +61,21 @@ tbc...
 1 train the SVM model on polar coordinates rather than cartesian coordinates,
 i suspect model accuracy will improve
 
+2 install jupyter-tensorboard?
+
+    pip install jupyter-tensorboard
+
+3 get external ip address:
+
+    pip install ipgetter
+    python -m ipgetter 
+
+4 start tensorboard:
+
+     cd exes-n-ohs
+     tensorboard --logdir=tf_logs/
+     http://52.89.99.15:6006
+
+
+
 
