@@ -125,6 +125,10 @@ i suspect model accuracy will improve
     tensorboard --logdir=tf_logs/
     http://52.89.99.15:6006
 
+3 force a git pull:
+
+    git fetch --all
+    git reset --hard origin/master
 
 
 
