@@ -24,7 +24,9 @@ These settings are used when launching a datascience.com session:
 
 ### decision boundary
 
-All records in this dataset are simple pairs of (x,y) coordinates, with each record
+After the datascience.com instance becomes available, use the Jupyter notebook _decision_boundaries.ipynb_
+to generate the mock (x,y) cartesian data, and then plot the mock data's system's decision boundaries.
+In the following, all records in this dataset contain simple pairs of (x,y) coordinates, with each record
 being labelled as a members of either the X, O, or B classes depending
 upon where its (x,y) coordinates resides within following decision boundary:<br />
 ![](figs/decision_boundary.png)<br />
