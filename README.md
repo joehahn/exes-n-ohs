@@ -125,9 +125,6 @@ model accuracy
 
 ### notes
 
-1 train the SVM model on polar coordinates rather than cartesian coordinates,
-i suspect model accuracy will improve
-
 2 install jupyter-tensorboard ...didnt work
 
     pip install jupyter-tensorboard
