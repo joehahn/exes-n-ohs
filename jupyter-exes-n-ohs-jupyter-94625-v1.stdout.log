@@ -1,0 +1,57 @@
+Initialized empty Git repository in /home/datascience/exes-n-ohs/.git/
+Activating privacy features... done.
+dsauth middleware is initiated
+http://0.0.0.0:8888
+Branch master set up to track remote branch master from origin.
+Collecting jupyter-tensorboard (from -r pip_install.txt (line 1))
+  Downloading https://files.pythonhosted.org/packages/60/c1/edb08cfe63cfa3f94716420ffaf186d9473c1a83eeabbd08cc5ae5679cd4/jupyter_tensorboard-0.1.6.tar.gz
+Requirement already satisfied: notebook>=5.0 in /usr/local/lib/python2.7/dist-packages (from jupyter-tensorboard->-r pip_install.txt (line 1))
+Requirement already satisfied: jinja2 in /usr/local/lib/python2.7/dist-packages (from notebook>=5.0->jupyter-tensorboard->-r pip_install.txt (line 1))
+Requirement already satisfied: Send2Trash in /usr/local/lib/python2.7/dist-packages (from notebook>=5.0->jupyter-tensorboard->-r pip_install.txt (line 1))
+Requirement already satisfied: tornado>=4 in /usr/local/lib/python2.7/dist-packages (from notebook>=5.0->jupyter-tensorboard->-r pip_install.txt (line 1))
+Requirement already satisfied: nbconvert in /usr/local/lib/python2.7/dist-packages (from notebook>=5.0->jupyter-tensorboard->-r pip_install.txt (line 1))
+Requirement already satisfied: jupyter-core>=4.4.0 in /usr/local/lib/python2.7/dist-packages (from notebook>=5.0->jupyter-tensorboard->-r pip_install.txt (line 1))
+Requirement already satisfied: traitlets>=4.2.1 in /usr/local/lib/python2.7/dist-packages (from notebook>=5.0->jupyter-tensorboard->-r pip_install.txt (line 1))
+Requirement already satisfied: ipykernel in /usr/local/lib/python2.7/dist-packages (from notebook>=5.0->jupyter-tensorboard->-r pip_install.txt (line 1))
+Requirement already satisfied: jupyter-client>=5.2.0 in /usr/local/lib/python2.7/dist-packages (from notebook>=5.0->jupyter-tensorboard->-r pip_install.txt (line 1))
+Requirement already satisfied: ipython-genutils in /usr/local/lib/python2.7/dist-packages (from notebook>=5.0->jupyter-tensorboard->-r pip_install.txt (line 1))
+Requirement already satisfied: terminado>=0.8.1 in /usr/local/lib/python2.7/dist-packages (from notebook>=5.0->jupyter-tensorboard->-r pip_install.txt (line 1))
+Requirement already satisfied: nbformat in /usr/local/lib/python2.7/dist-packages (from notebook>=5.0->jupyter-tensorboard->-r pip_install.txt (line 1))
+Requirement already satisfied: MarkupSafe>=0.23 in /usr/local/lib/python2.7/dist-packages (from jinja2->notebook>=5.0->jupyter-tensorboard->-r pip_install.txt (line 1))
+Requirement already satisfied: singledispatch in /usr/local/lib/python2.7/dist-packages (from tornado>=4->notebook>=5.0->jupyter-tensorboard->-r pip_install.txt (line 1))
+Requirement already satisfied: certifi in /usr/local/lib/python2.7/dist-packages (from tornado>=4->notebook>=5.0->jupyter-tensorboard->-r pip_install.txt (line 1))
+Requirement already satisfied: backports_abc>=0.4 in /usr/local/lib/python2.7/dist-packages (from tornado>=4->notebook>=5.0->jupyter-tensorboard->-r pip_install.txt (line 1))
+Requirement already satisfied: pygments in /usr/local/lib/python2.7/dist-packages (from nbconvert->notebook>=5.0->jupyter-tensorboard->-r pip_install.txt (line 1))
+Requirement already satisfied: pandocfilters>=1.4.1 in /usr/local/lib/python2.7/dist-packages (from nbconvert->notebook>=5.0->jupyter-tensorboard->-r pip_install.txt (line 1))
+Requirement already satisfied: testpath in /usr/local/lib/python2.7/dist-packages (from nbconvert->notebook>=5.0->jupyter-tensorboard->-r pip_install.txt (line 1))
+Requirement already satisfied: entrypoints>=0.2.2 in /usr/local/lib/python2.7/dist-packages (from nbconvert->notebook>=5.0->jupyter-tensorboard->-r pip_install.txt (line 1))
+Requirement already satisfied: mistune>=0.7.4 in /usr/local/lib/python2.7/dist-packages (from nbconvert->notebook>=5.0->jupyter-tensorboard->-r pip_install.txt (line 1))
+Requirement already satisfied: bleach in /usr/local/lib/python2.7/dist-packages (from nbconvert->notebook>=5.0->jupyter-tensorboard->-r pip_install.txt (line 1))
+Requirement already satisfied: six in /usr/local/lib/python2.7/dist-packages (from traitlets>=4.2.1->notebook>=5.0->jupyter-tensorboard->-r pip_install.txt (line 1))
+Requirement already satisfied: enum34; python_version == "2.7" in /usr/local/lib/python2.7/dist-packages (from traitlets>=4.2.1->notebook>=5.0->jupyter-tensorboard->-r pip_install.txt (line 1))
+Requirement already satisfied: decorator in /usr/local/lib/python2.7/dist-packages (from traitlets>=4.2.1->notebook>=5.0->jupyter-tensorboard->-r pip_install.txt (line 1))
+Requirement already satisfied: ipython>=4.0.0 in /usr/local/lib/python2.7/dist-packages (from ipykernel->notebook>=5.0->jupyter-tensorboard->-r pip_install.txt (line 1))
+Requirement already satisfied: pyzmq>=13 in /usr/local/lib/python2.7/dist-packages (from jupyter-client>=5.2.0->notebook>=5.0->jupyter-tensorboard->-r pip_install.txt (line 1))
+Requirement already satisfied: python-dateutil>=2.1 in /usr/local/lib/python2.7/dist-packages (from jupyter-client>=5.2.0->notebook>=5.0->jupyter-tensorboard->-r pip_install.txt (line 1))
+Requirement already satisfied: ptyprocess; os_name != "nt" in /usr/local/lib/python2.7/dist-packages (from terminado>=0.8.1->notebook>=5.0->jupyter-tensorboard->-r pip_install.txt (line 1))
+Requirement already satisfied: jsonschema!=2.5.0,>=2.4 in /usr/local/lib/python2.7/dist-packages (from nbformat->notebook>=5.0->jupyter-tensorboard->-r pip_install.txt (line 1))
+Requirement already satisfied: configparser>=3.5; python_version == "2.7" in /usr/local/lib/python2.7/dist-packages (from entrypoints>=0.2.2->nbconvert->notebook>=5.0->jupyter-tensorboard->-r pip_install.txt (line 1))
+Requirement already satisfied: html5lib!=0.9999,!=0.99999,<0.99999999,>=0.999 in /usr/local/lib/python2.7/dist-packages (from bleach->nbconvert->notebook>=5.0->jupyter-tensorboard->-r pip_install.txt (line 1))
+Requirement already satisfied: prompt-toolkit<2.0.0,>=1.0.4 in /usr/local/lib/python2.7/dist-packages (from ipython>=4.0.0->ipykernel->notebook>=5.0->jupyter-tensorboard->-r pip_install.txt (line 1))
+Requirement already satisfied: setuptools>=18.5 in /usr/local/lib/python2.7/dist-packages (from ipython>=4.0.0->ipykernel->notebook>=5.0->jupyter-tensorboard->-r pip_install.txt (line 1))
+Requirement already satisfied: backports.shutil-get-terminal-size; python_version == "2.7" in /usr/local/lib/python2.7/dist-packages (from ipython>=4.0.0->ipykernel->notebook>=5.0->jupyter-tensorboard->-r pip_install.txt (line 1))
+Requirement already satisfied: pickleshare in /usr/local/lib/python2.7/dist-packages (from ipython>=4.0.0->ipykernel->notebook>=5.0->jupyter-tensorboard->-r pip_install.txt (line 1))
+Requirement already satisfied: pexpect; sys_platform != "win32" in /usr/local/lib/python2.7/dist-packages (from ipython>=4.0.0->ipykernel->notebook>=5.0->jupyter-tensorboard->-r pip_install.txt (line 1))
+Requirement already satisfied: pathlib2; python_version == "2.7" or python_version == "3.3" in /usr/local/lib/python2.7/dist-packages (from ipython>=4.0.0->ipykernel->notebook>=5.0->jupyter-tensorboard->-r pip_install.txt (line 1))
+Requirement already satisfied: simplegeneric>0.8 in /usr/local/lib/python2.7/dist-packages (from ipython>=4.0.0->ipykernel->notebook>=5.0->jupyter-tensorboard->-r pip_install.txt (line 1))
+Requirement already satisfied: functools32; python_version == "2.7" in /usr/local/lib/python2.7/dist-packages (from jsonschema!=2.5.0,>=2.4->nbformat->notebook>=5.0->jupyter-tensorboard->-r pip_install.txt (line 1))
+Requirement already satisfied: wcwidth in /usr/local/lib/python2.7/dist-packages (from prompt-toolkit<2.0.0,>=1.0.4->ipython>=4.0.0->ipykernel->notebook>=5.0->jupyter-tensorboard->-r pip_install.txt (line 1))
+Requirement already satisfied: scandir; python_version < "3.5" in /usr/local/lib/python2.7/dist-packages (from pathlib2; python_version == "2.7" or python_version == "3.3"->ipython>=4.0.0->ipykernel->notebook>=5.0->jupyter-tensorboard->-r pip_install.txt (line 1))
+Building wheels for collected packages: jupyter-tensorboard
+  Running setup.py bdist_wheel for jupyter-tensorboard: started
+  Running setup.py bdist_wheel for jupyter-tensorboard: finished with status 'done'
+  Stored in directory: /root/.cache/pip/wheels/01/55/0a/e71a3d3e886ac02b0374a86385d5027973381d83734c14724a
+Successfully built jupyter-tensorboard
+Installing collected packages: jupyter-tensorboard
+Successfully installed jupyter-tensorboard-0.1.6
+Loaded environment variables
