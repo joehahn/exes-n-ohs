@@ -83,12 +83,12 @@ and that API is then deployed with these settings:
 
     API Name=exes-n-ohs-api
     description=wrap an API around the MLP model built in the exes-n-ohs demo
-    model to deploy=mlp_model_api.py
+    model to deploy=svm_model_api.py
     compute resource=m4.xlarge
     environment=keras & tensorflow
     add requirement > pip=pip_install.txt
     Specify Function=api_predict
-    Example Data={"x":1.0, "y":2.0}
+    Example Data={"data":{"x":1.0, "y":2.0}}
 
 Then curl that API to generate a prediction from a jsonized pair of x,y coordinates:
 
