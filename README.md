@@ -8,9 +8,9 @@ git branch=master
 This demo performs a simple machine-learning experiment on a datascience.com instance 
 in the cloud, first using scikit-learn to fit a support vector machine (SVM) model
 to a simple but rather noisy dataset, and then keras to fit a simple neural-net model
-to that same data. The main purpose of this demo is illustrate the usage of all the
+to that same data. The main purpose of this demo is illustrate usage of all the
 key elements of the datascience.com platform, namely, to use a notebook to train a predictive
-model, to publish that model via an API, and ...
+model, exposing that model via an API, and ...
 
 ### session settings:
 
@@ -107,8 +107,6 @@ which should report something like
 ### todo
 
 1 publish a report or dashboard
-
-2 make model predictions visible via API
 
 3 add hashed password
 
