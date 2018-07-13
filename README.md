@@ -17,6 +17,7 @@ Use these setting when launching a session:
     tool=jupyter
     compute resource=m4.xlarge
     environment=keras & tensorflow
+    add requirement > pip=pip_install.txt
 
 
 ### decision boundary
