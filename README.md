@@ -92,12 +92,17 @@ and that API is then deployed with these settings:
 
 Then curl that API to generate a prediction from a jsonized pair of x,y coordinates:
 
-    curl -L -X POST -d '{"data":{"x":1.0, "y":2.0}}' -H 'Content-Type: application/json' \
-        -H'Cookie: datascience-platform=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI0M2YxY2ExOC0wNTE3LTRkYmYtYTQxMC04Y2FjMzU5MzUxNGIiLCJzZXJ2aWNlTmFtZSI6ImRlcGxveS1leGVzLW4tb2hzLWFwaS0xOTY2LXYxIiwiaWF0IjoxNTMxNTA1MDg1fQ.C8iJEq1Kt_1RJtqwrdO80A0R5vIoRpERvrWtlHs90sA' \
-        https://demo-next.datascience.com/deploy/deploy-exes-n-ohs-api-1966-v1/
-    
+curl -L -X POST -d '{"data":{"x":1.0, "y":2.0}}' -H 'Content-Type: application/json' \
+    -H'Cookie: datascience-platform=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI0MWI5YmM4YS0xMmI0LTRiOTgtYTNmNy00NzcxYmJhZGIyMzEiLCJzZXJ2aWNlTmFtZSI6ImRlcGxveS1leGVzLW4tb2hzLWFwaS0xOTY2LXYyIiwiaWF0IjoxNTMxNTA2NzAyfQ.4fEiEYjBFHj9MxeW5SyYMg9FQrp9glvN8D6GAh9rrco' \
+     https://demo-next.datascience.com/deploy/deploy-exes-n-ohs-api-1966-v2/
 
-am still debugging this...
+which should report something like
+
+    {
+      "class_pred": "O", 
+      "class_prob": "0.547"
+    }
+
 
 ### todo
 
