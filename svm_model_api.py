@@ -7,7 +7,6 @@
 #13 July 2018
 #
 #this api uses the svm model to classify (x,y) input data, and returns predicted class X,O, or B
-#and its class probability
 #
 #example usage:
 #    from svm_model_api import *
@@ -22,22 +21,15 @@ model = pkl.load(open('svm_model.pkl', 'rb'))
 def api_predict(data):
     
     #convert input data dict to numpy array
-    xx = float(data['x'])
-    yy =  float(data['y'])
-    data_list = [ [xx, yy], ]
+    x0 = float(data['x'])
+    x1 =  float(data['y'])
+    data_list = [ [x0, x1], ]
     from numpy import array
     x = array(data_list)
     
-    #compute predicted class probability
+    #compute predicted class
     y = model.predict(x)[0]
-    y = y/y.sum()
-    
-    #select highest-scoring class
-    y_cols = ['O_score', 'X_score', 'B_score']
-    idx = y.argmax()
-    class_prob = y[idx]
-    class_pred = y_cols[idx][0]
-    
+
     #return result as dict aka json
-    y_json = {'class_pred':class_pred, 'class_prob':class_prob}
-    return y_json
+    y_dict = {'class_pred':y}
+    return y_dict
