@@ -73,6 +73,13 @@ and that trained  model is then used to compute its decision boundary:<br />
 which looks quite similar to that produced by the SVM model. However the MLP model's
 accuracy, 61%, is a bit lower than SVM.
 
+This MLP model's hyperparameters are the number of hidden layers (currently 3) and
+the number of neurons in each hidden layer (10, 60, and 20) as well as the dropout_fraction.
+I manually explored many such models have more or less layers and neurons, and found that
+taller & narrower neural nets (which have fewer neurons spread across more layers)
+were more performant than shorter fatter nets. Nonetheless the MLP model shown
+here does not outperform the SVM model, which is kinda dissapointing...
+
 Adding another layer might boost MLP accuracy on the green X class. Or maybe
 boosting the green's representation in the training dataset. Still in progress...
 
