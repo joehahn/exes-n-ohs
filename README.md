@@ -14,7 +14,7 @@ model, exposing that model via an API, and ...
 
 ### session settings:
 
-Use these setting when launching a session:
+These settings are used when launching a datascience.com session:
 
     tool=jupyter
     compute resource=m4.xlarge
