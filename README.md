@@ -74,6 +74,14 @@ accuracy, 61%, is a bit lower than SVM.
 Adding another layer might boost MLP accuracy on the green X class. Or maybe
 boosting the green's representation in the training dataset. Still in progress...
 
+### deploy model API
+
+The script _mlp_model_api.py_ also wraps an API around the MLP model's predict method,
+and that API is then deployed per this tutorial
+https://docs.datascience.com/en/master/tutorials-and-examples/deploying-a-python-xgboost-model.html#deploying-a-python-xgboost-model-7
+...but that api fails when deployed on m4.large instance with 
+Status: Terminated: Insufficient Resources...still debugging...
+
 ### todo
 
 1 publish a report or dashboard

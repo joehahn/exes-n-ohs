@@ -10,7 +10,7 @@
 #
 #example usage:
 #    from mlp_model_api import *
-#    x_json = {'x':1.0, 'y':2.0}
+#    x_json = {"x":1.0, "y":2.0}
 #    api_predict(x_json)
 
 #load mlp model
