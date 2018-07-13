@@ -79,10 +79,7 @@ boosting the green's representation in the training dataset. Still in progress..
 ### deploy model API
 
 The script _mlp_model_api.py_ also wraps an API around the MLP model's predict method,
-and that API is then deployed per this tutorial
-https://docs.datascience.com/en/master/tutorials-and-examples/deploying-a-python-xgboost-model.html#deploying-a-python-xgboost-model-7
-...but that api fails when deployed on m4.large instance with 
-Status: Terminated: Insufficient Resources...still debugging...
+and that API is then deployed with these settings:
 
     API Name=exes-n-ohs-api
     description=wrap an API around the MLP model built in the exes-n-ohs demo
@@ -92,6 +89,14 @@ Status: Terminated: Insufficient Resources...still debugging...
     add requirement > pip=pip_install.txt
     Specify Function=api_predict
     Example Data={"x":1.0, "y":2.0}
+
+Then curl that API to generate a prediction from a jsonized pair of x,y coordinates:
+
+    curl -L -X POST -d '{"x":1.0,"y":2.0}' -H 'Content-Type: application/json' \
+        -H'Cookie: datascience-platform=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIxZDJjZWRlZS1iMmZkLTQ3ZmItYTE4Yi03NzFjMmFjM2Y0Y2QiLCJzZXJ2aWNlTmFtZSI6ImRlcGxveS1leGVzLW4tb2hzLWFwaS0xNzc2NzgtdjEiLCJpYXQiOjE1MzE0NDMyNzN9.OS8lwecOLGG3Qpe0yukRi4nrfcD3CclHkH9SEweDGXU' \
+        https://demo-next.datascience.com/deploy/deploy-exes-n-ohs-api-177678-v1/
+
+am still debugging this...
 
 ### todo
 
