@@ -10,21 +10,22 @@
 #
 #example usage:
 #    from mlp_model_api import *
-#    x_json = {"x":1.0, "y":2.0}
-#    api_predict(x_json)
+#    data = {"x":1.0, "y":2.0}
+#    api_predict(data)
 
 #load mlp model
 from keras.models import load_model
 model = load_model('mlp_model.h5')
 
 #model api
-def api_predict(x_json):
+def api_predict(data):
     
-    #convert input dict data to numpy array
+    #convert input data dict to numpy array
+    xx = float(data['x'])
+    yy =  float(data['y'])
+    data_list = [ [xx, yy], ]
     from numpy import array
-    x_list = [[x_json['x'], x_json['y']], ]
-    from numpy import array
-    x = array(x_list)
+    x = array(data_list)
     
     #compute predicted class probability
     y = model.predict(x)[0]
