@@ -30,11 +30,9 @@ All records in this dataset contain simple pairs of (x,y) coordinates, with each
 also labelled as being a member of either the X, O, or B classes depending
 upon where its (x,y) coordinates reside within following decision boundary:<br />
 ![](figs/decision_boundary.png)<br />
-A record is designated as a member of the X class if its (x,y) coordinates
+A record is designated a member of the X class if its (x,y) coordinates
 places it within the green X. Or else it can be a member of the
-red O class, or the blue background B class. To produce this plot, execute the 
-_decision_boundaries.ipynb_ notebook to generate the mock (x,y) data and to 
-plot this system's decision boundaries.
+red O class, or the blue background B class. 
 
 ### classifying noisy data
 
