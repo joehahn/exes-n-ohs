@@ -21,9 +21,9 @@ model = load_model('mlp_model.h5')
 def api_predict(data):
     
     #convert input data dict to numpy array
-    xx = float(data['x'])
-    yy =  float(data['y'])
-    data_list = [ [xx, yy], ]
+    x0 = float(data['x'])
+    x1 =  float(data['y'])
+    data_list = [ [x0, x1], ]
     from numpy import array
     x = array(data_list)
     
@@ -34,9 +34,9 @@ def api_predict(data):
     #select highest-scoring class
     y_cols = ['O_score', 'X_score', 'B_score']
     idx = y.argmax()
-    class_prob = y[idx]
+    class_prob = str(y[idx])
     class_pred = y_cols[idx][0]
     
     #return result as dict aka json
-    y_json = {'class_pred':class_pred, 'class_prob':class_prob}
-    return y_json
+    y_dict = {'class_pred':class_pred, 'class_prob':str(class_prob[0:5])}
+    return y_dict
