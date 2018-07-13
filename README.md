@@ -8,7 +8,9 @@ git branch=master
 This demo performs a simple machine-learning experiment on a datascience.com instance 
 in the cloud, first using scikit-learn to fit a support vector machine (SVM) model
 to a simple but rather noisy dataset, and then keras to fit a simple neural-net model
-to that same data.
+to that same data. The main purpose of this demo is illustrate the usage of all the
+key elements of the datascience.com platform, namely, to use a notebook to train a predictive
+model, to publish that model via an API, and ...
 
 ### session settings:
 
@@ -81,6 +83,15 @@ and that API is then deployed per this tutorial
 https://docs.datascience.com/en/master/tutorials-and-examples/deploying-a-python-xgboost-model.html#deploying-a-python-xgboost-model-7
 ...but that api fails when deployed on m4.large instance with 
 Status: Terminated: Insufficient Resources...still debugging...
+
+    API Name=exes-n-ohs-api
+    description=wrap an API around the MLP model built in the exes-n-ohs demo
+    model to deploy=mlp_model_api.py
+    compute resource=m4.xlarge
+    environment=keras & tensorflow
+    add requirement > pip=pip_install.txt
+    Specify Function=api_predict
+    Example Data={"x":1.0, "y":2.0}
 
 ### todo
 
