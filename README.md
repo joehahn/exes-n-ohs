@@ -8,13 +8,13 @@ git branch=master
 This demo performs a simple machine-learning experiment on a datascience.com instance 
 in the cloud, first using scikit-learn to fit a support vector machine (SVM) model
 to a simple but rather noisy dataset, and then keras to fit a simple neural-net model
-to that same data. The main purpose of this demo is illustrate the usage of all the
+to that same data. The main purpose of this demo is illustrate usage of all the
 key elements of the datascience.com platform, namely, to use a notebook to train a predictive
-model, to publish that model via an API, and ...
+model, exposing that model via an API, and ...
 
 ### session settings:
 
-Use these setting when launching a session:
+These settings are used when launching a datascience.com session:
 
     tool=jupyter
     compute resource=m4.xlarge
@@ -24,15 +24,15 @@ Use these setting when launching a session:
 
 ### decision boundary
 
-All records in this dataset are simple pairs of (x,y) coordinates, with each record
-being labelled as a members of either the X, O, or B classes depending
-upon where its (x,y) coordinates resides within following decision boundary:<br />
+After the datascience.com instance becomes available, use the Jupyter notebook _decision_boundaries.ipynb_
+to generate the mock (x,y) cartesian data, and then plot the mock data's system's decision boundaries.
+All records in this dataset contain simple pairs of (x,y) coordinates, with each record
+also labelled as being a member of either the X, O, or B classes depending
+upon where its (x,y) coordinates reside within following decision boundary:<br />
 ![](figs/decision_boundary.png)<br />
-Note that a record is designated as a member of the X class if its (x,y) coordinates
+A record is designated a member of the X class if its (x,y) coordinates
 places it within the green X. Or else it can be a member of the
-red O class, or the blue background B class. To produce this plot, execute the 
-_decision_boundaries.ipynb_ notebook to generate the mock (x,y) data and to 
-plot this system's decision boundaries.
+red O class, or the blue background B class. 
 
 ### classifying noisy data
 
@@ -73,13 +73,20 @@ and that trained  model is then used to compute its decision boundary:<br />
 which looks quite similar to that produced by the SVM model. However the MLP model's
 accuracy, 61%, is a bit lower than SVM.
 
+This MLP model's hyperparameters are the number of hidden layers (currently 3) and
+the number of neurons in each hidden layer (10, 60, and 20) as well as the dropout_fraction.
+I manually explored many such models have more or less layers and neurons, and found that
+taller & narrower neural nets (which have fewer neurons spread across more layers)
+were more performant than shorter fatter nets. Nonetheless the MLP model shown
+here does not outperform the SVM model, which is kinda dissapointing...
+
 Adding another layer might boost MLP accuracy on the green X class. Or maybe
 boosting the green's representation in the training dataset. Still in progress...
 
 ### deploy model API
 
 The script _mlp_model_api.py_ also wraps an API around the MLP model's predict method,
-and that API is then deployed with these settings:
+and that API is deployed with these settings:
 
     API Name=exes-n-ohs-api
     description=API that calls the MLP model built by the exes-n-ohs demo
@@ -90,20 +97,26 @@ and that API is then deployed with these settings:
     Specify Function=api_predict
     Example Data={"data":{"x":1.0, "y":2.0}}
 
-Then curl that API to generate a prediction from a jsonized pair of x,y coordinates:
+To test that API, use curl to feed a pair of jsonized x,y coordinates into that API's url:
 
     curl -L -X POST -d '{"data":{"x":1.0, "y":2.0}}' -H 'Content-Type: application/json' \
-        -H'Cookie: datascience-platform=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI0M2YxY2ExOC0wNTE3LTRkYmYtYTQxMC04Y2FjMzU5MzUxNGIiLCJzZXJ2aWNlTmFtZSI6ImRlcGxveS1leGVzLW4tb2hzLWFwaS0xOTY2LXYxIiwiaWF0IjoxNTMxNTA1MDg1fQ.C8iJEq1Kt_1RJtqwrdO80A0R5vIoRpERvrWtlHs90sA' \
-        https://demo-next.datascience.com/deploy/deploy-exes-n-ohs-api-1966-v1/
-    
+        -H'Cookie: datascience-platform=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI0MWI5YmM4YS0xMmI0LTRiOTgtYTNmNy00NzcxYmJhZGIyMzEiLCJzZXJ2aWNlTmFtZSI6ImRlcGxveS1leGVzLW4tb2hzLWFwaS0xOTY2LXYyIiwiaWF0IjoxNTMxNTA2NzAyfQ.4fEiEYjBFHj9MxeW5SyYMg9FQrp9glvN8D6GAh9rrco' \
+        https://demo-next.datascience.com/deploy/deploy-exes-n-ohs-api-1966-v2/
 
-am still debugging this...
+which should report something like
+
+    {
+      "class_pred": "O", 
+      "class_prob": "0.547"
+    }
+
+so the model reports that a record having (x,y)=(1,2) is most likely class O, with confidence score 54.7%.
 
 ### todo
 
 1 publish a report or dashboard
 
-2 make model predictions visible via API
+2 try mlp model using activation='sigmoid' and loss='categorical_crossentropy'
 
 3 add hashed password
 
@@ -111,9 +124,6 @@ am still debugging this...
 model accuracy
 
 ### notes
-
-1 train the SVM model on polar coordinates rather than cartesian coordinates,
-i suspect model accuracy will improve
 
 2 install jupyter-tensorboard ...didnt work
 
