@@ -110,7 +110,7 @@ which should report something like
       "class_prob": "0.547"
     }
 
-so the model thinks that a record having (x,y)=(1,2) is most likely class O, with confidence score of 54.7%.
+so the model reports that a record having (x,y)=(1,2) is most likely class O, with confidence score 54.7%.
 
 ### todo
 
