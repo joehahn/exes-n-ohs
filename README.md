@@ -115,6 +115,8 @@ which should report something like
 
 1 publish a report or dashboard
 
+2 try mlp model using activation='sigmoid' and loss='categorical_crossentropy'
+
 3 add hashed password
 
 4 try training model on polar rather than cartesian coordinates, that might boost
