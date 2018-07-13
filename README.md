@@ -86,7 +86,7 @@ boosting the green's representation in the training dataset. Still in progress..
 ### deploy model API
 
 The script _mlp_model_api.py_ also wraps an API around the MLP model's predict method,
-and that API is then deployed with these settings:
+and that API is deployed with these settings:
 
     API Name=exes-n-ohs-api
     description=API that calls the MLP model built by the exes-n-ohs demo
@@ -97,11 +97,11 @@ and that API is then deployed with these settings:
     Specify Function=api_predict
     Example Data={"data":{"x":1.0, "y":2.0}}
 
-Then curl that API to generate a prediction from a jsonized pair of x,y coordinates:
+To test that API, use curl to feed a pair of jsonized x,y coordinates into that API's url:
 
-curl -L -X POST -d '{"data":{"x":1.0, "y":2.0}}' -H 'Content-Type: application/json' \
-    -H'Cookie: datascience-platform=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI0MWI5YmM4YS0xMmI0LTRiOTgtYTNmNy00NzcxYmJhZGIyMzEiLCJzZXJ2aWNlTmFtZSI6ImRlcGxveS1leGVzLW4tb2hzLWFwaS0xOTY2LXYyIiwiaWF0IjoxNTMxNTA2NzAyfQ.4fEiEYjBFHj9MxeW5SyYMg9FQrp9glvN8D6GAh9rrco' \
-     https://demo-next.datascience.com/deploy/deploy-exes-n-ohs-api-1966-v2/
+    curl -L -X POST -d '{"data":{"x":1.0, "y":2.0}}' -H 'Content-Type: application/json' \
+        -H'Cookie: datascience-platform=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI0MWI5YmM4YS0xMmI0LTRiOTgtYTNmNy00NzcxYmJhZGIyMzEiLCJzZXJ2aWNlTmFtZSI6ImRlcGxveS1leGVzLW4tb2hzLWFwaS0xOTY2LXYyIiwiaWF0IjoxNTMxNTA2NzAyfQ.4fEiEYjBFHj9MxeW5SyYMg9FQrp9glvN8D6GAh9rrco' \
+        https://demo-next.datascience.com/deploy/deploy-exes-n-ohs-api-1966-v2/
 
 which should report something like
 
