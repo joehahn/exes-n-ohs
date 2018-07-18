@@ -143,9 +143,13 @@ turn it on, start a terminal and then tell jupyter notebook about the jupyter da
 and then execute _confidence_levels.ipynb_ and click the new dashboard icon:<br />
 ![](figs/dashboard.png)<br />
 
-### todo
 
-3 add hashed password
+### environmental variables
+
+Store database passwords and AWS keys as environment variables, to avoid exposing
+confidential info via git. Click Settings > Environment Variables and enter
+Key=PASSWORD and Value=Larry's last name. Then execute _test_password.ipynb_
+to confirm that notebook is aware of the password.
 
 
 ### notes
@@ -169,9 +173,10 @@ Using bit-mapped input + convolution neural net (rather than MLP) might be even 
     tensorboard --logdir=tf_logs/
     http://52.89.99.15:6006
 
-4 to install pip install jupyter_dashboards:
+4 to install install jupyter_dashboards:
 
     pip install jupyter_dashboards
+    sudo jupyter dashboards quick-setup --sys-prefix
 
 5 force a git pull:
 
