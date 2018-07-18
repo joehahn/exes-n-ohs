@@ -115,13 +115,30 @@ so the model reports that a record having (x,y)=(1,2) is most likely class O, wi
 If instead you get "curl: (60) SSL certificate problem: unable to get local issuer certificate"
 add -k option to curl command.
 
-###publish report
 
-First open a terminal and then tell jupyter notebook about the jupyter dashboards:
+### publish a report
+
+Execute _confidence_levels.ipynb_ to generate the report's contents, which includes a plot of the distribution of
+the MLP model's confidence scores<br />
+![](figs/mlp_confidence_scores.png)<br />
+and a redraw of the model's decision boundaries but dot intensity indicating model confidence:<br />
+![](figs/mlp_confidence_boundary.png)<br />
+
+To publish that notebook's contents, click Publish a Report and use these settings:
+
+    file=confidence_levels.ipynb
+    Title=MLP Confidence Levels
+    Description=MLP model's confidence levels
+    
+
+### jupyter dashboard
+
+Jupyter-dashboard is an extension that was added on launch via pip_install.txt. To manually
+turn it on, a terminal and then tell jupyter notebook about the jupyter dashboards:
 
     sudo jupyter dashboards quick-setup --sys-prefix
 
-and execute _confidence_levels.ipynb_
+and then execute _confidence_levels.ipynb_ and click the new dashboard icon
 
 ### todo
 
