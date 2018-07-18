@@ -45,7 +45,7 @@ causes considerable bleed between adjacent classes.
 This notebook then trains an SVM classifier to predict
 X,O,B membership using a similarly noisy sample of training data. The notebook
 also optimizes that model's hyperparameters, and that optimized classifier achieves
-an accuracy of about 67%, with the model's inferred decision boundary shown below:<br />
+an accuracy of about 68%, with the model's inferred decision boundary shown below:<br />
 ![](figs/svm_decision_boundary.png)<br />
 Comparing the model-inferred decision boundary (above) to the system's actual decision
 boundary (topmost plot) shows that the SVM model consistently overestimates the width
@@ -60,28 +60,28 @@ other such library. Execute the _mlp_model.ipynb_ notebook to generate
 the following summary report that describes the MLP model built here:<br />
 ![](figs/mlp_summary.png)<br />
 which shows that this neural net has five layers, an input layer having N=2 neurons
-that receive each record's (x,y) coordinates, three densely-connected
-hidden layers composed of N=10, 60, and then 20 neurons,
+to receive each record's (x,y) coordinates, three densely-connected
+hidden layers composed of N=16, 32, and then 12 neurons,
 followed by an N=3 neuron layer that outputs
 each record's class probabilities. And to manage any overfitting, dropout
-layers are also sandwiched between each of the above dense layers
-with dropout_fraction=0.1
+layers are also sandwiched between some of the hidden layers with
+dropout fractions of 0.2 and 0.1
 
-The MLP model is then trained on a much larger sample of records, 10 million,
+The MLP model is then trained on a much larger sample of records, 2 million,
 and that trained  model is then used to compute its decision boundary:<br />
 ![](figs/mlp_decision_boundary.png)<br />
-which looks quite similar to that produced by the SVM model. However the MLP model's
-accuracy, 61%, is a bit lower than SVM.
+which looks quite similar to that produced by the SVM model, and has a similar
+accuracy.
 
 This MLP model's hyperparameters are the number of hidden layers (currently 3) and
-the number of neurons in each hidden layer (10, 60, and 20) as well as the dropout_fraction.
-I manually explored many such models have more or less layers and neurons, and found that
+the number of neurons in each hidden layer (16, 32, and 12) as well as the dropout_fractions.
+Manually explored many such models having more or less layers and neurons, as well as
 taller & narrower neural nets (which have fewer neurons spread across more layers)
-were more performant than shorter fatter nets. Nonetheless the MLP model shown
-here does not outperform the SVM model, which is kinda dissapointing...
+reveals that taller/narrow nets are more performant than shorter/fatter ones.
+Nonetheless the MLP model user here does not outperform the SVM model, which is kinda dissapointing.
+Bitmapping the input (x,y) coordinates and using a convolution neural net (rather than MLP)
+might yield a more accurate model.
 
-Adding another layer might boost MLP accuracy on the green X class. Or maybe
-boosting the green's representation in the training dataset. Still in progress...
 
 ### deploy model API
 
@@ -116,8 +116,6 @@ so the model reports that a record having (x,y)=(1,2) is most likely class O, wi
 
 1 publish a report or dashboard
 
-2 try mlp model using activation='sigmoid' and loss='categorical_crossentropy'
-
 3 add hashed password
 
 4 try training model on polar rather than cartesian coordinates, that might boost
@@ -125,7 +123,15 @@ model accuracy
 
 ### notes
 
-2 install jupyter-tensorboard ...didnt work
+1 The MLP model was first trained on the (x,y) cartesian coordinates, and that model
+was as accurate as the SVM model. Then MLP was trained on the (r,angle) polar
+coordinates, that model was less accurate. Current MLP model is now trained on 
+the redundant set of (x,y,r,angle) data, and is as good as SVM.
+
+1 training MLP model on bit-mapped (x,y) input data might improve model accuracy. 
+Using bit-mapped input + convolution neural net (rather than MLP) might be even better
+
+3 install jupyter-tensorboard ...didnt work
 
     pip install jupyter-tensorboard
     #get external ip address:
@@ -136,7 +142,7 @@ model accuracy
     tensorboard --logdir=tf_logs/
     http://52.89.99.15:6006
 
-3 force a git pull:
+4 force a git pull:
 
     git fetch --all
     git reset --hard origin/master
