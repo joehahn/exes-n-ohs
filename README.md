@@ -116,8 +116,6 @@ so the model reports that a record having (x,y)=(1,2) is most likely class O, wi
 
 1 publish a report or dashboard
 
-2 try mlp model using activation='sigmoid' and loss='categorical_crossentropy'
-
 3 add hashed password
 
 4 try training model on polar rather than cartesian coordinates, that might boost
@@ -125,7 +123,15 @@ model accuracy
 
 ### notes
 
-2 install jupyter-tensorboard ...didnt work
+1 The MLP model was first trained on the (x,y) cartesian coordinates, and that model
+was as accurate as the SVM model. Then MLP was trained on the (r,angle) polar
+coordinates, that model was less accurate. Current MLP model is now trained on 
+the redundant set of (x,y,r,angle) data, and is as good as SVM.
+
+1 training MLP model on bit-mapped (x,y) input data might improve model accuracy. 
+Using bit-mapped input + convolution neural net (rather than MLP) might be even better
+
+3 install jupyter-tensorboard ...didnt work
 
     pip install jupyter-tensorboard
     #get external ip address:
@@ -136,7 +142,7 @@ model accuracy
     tensorboard --logdir=tf_logs/
     http://52.89.99.15:6006
 
-3 force a git pull:
+4 force a git pull:
 
     git fetch --all
     git reset --hard origin/master
