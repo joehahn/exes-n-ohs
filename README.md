@@ -110,7 +110,7 @@ which should report something like
       "class_prob": "0.592"
     }
 
-so the model reports that a record having (x,y)=(1,2) is most likely class O, with confidence score 54.7%.
+so the model reports that a record having (x,y)=(1,2) is most likely class O, with confidence score 59.2%.
 
 If instead you get "curl: (60) SSL certificate problem: unable to get local issuer certificate"
 add -k option to curl command.
