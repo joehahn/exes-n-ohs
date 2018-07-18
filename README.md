@@ -17,7 +17,8 @@ model, exposing that model via an API, and ...
 These settings are used when launching a datascience.com session:
 
     tool=jupyter
-    compute resource=m4.xlarge
+    #compute resource=m4.xlarge
+    compute resource=always on, 8GB/1CPU
     environment=keras & tensorflow
     add requirement > pip=pip_install.txt
 
@@ -91,7 +92,6 @@ and that API is deployed with these settings:
     API Name=exes-n-ohs-api
     description=API for calling the MLP model built by the exes-n-ohs demo
     model to deploy=mlp_model_api.py
-    #compute resource=m4.xlarge
     compute resource=always on, 0.5GB 0.5CPU
     environment=keras & tensorflow
     Specify Function=api_predict
@@ -114,6 +114,14 @@ so the model reports that a record having (x,y)=(1,2) is most likely class O, wi
 
 If instead you get "curl: (60) SSL certificate problem: unable to get local issuer certificate"
 add -k option to curl command.
+
+###publish report
+
+First open a terminal and then tell jupyter notebook about the jupyter dashboards:
+
+    sudo jupyter dashboards quick-setup --sys-prefix
+
+and execute _confidence_levels.ipynb_
 
 ### todo
 
