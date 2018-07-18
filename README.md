@@ -142,12 +142,9 @@ and then execute _confidence_levels.ipynb_ and click the new dashboard icon
 
 ### todo
 
-1 publish a report or dashboard
 
 3 add hashed password
 
-4 try training model on polar rather than cartesian coordinates, that might boost
-model accuracy
 
 ### notes
 
