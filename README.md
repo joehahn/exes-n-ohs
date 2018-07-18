@@ -121,8 +121,10 @@ add -k option to curl command.
 Execute _confidence_levels.ipynb_ to generate the report's contents, which includes a plot of the distribution of
 the MLP model's confidence scores<br />
 ![](figs/mlp_confidence_scores.png)<br />
-and a redraw of the model's decision boundaries but dot intensity indicating model confidence:<br />
+and a redraw of the model's decision boundaries with dot intensity indicating model confidence:<br />
 ![](figs/mlp_confidence_boundary.png)<br />
+The densest dots have confidence score > 0.8, intermediate dots have 0.65 < score < 0.8,
+and the lightest dots have score < 0.65.
 
 To publish that notebook's contents, click Publish a Report and use these settings:
 
