@@ -10,7 +10,7 @@ in the cloud, first using scikit-learn to fit a support vector machine (SVM) mod
 to a simple but rather noisy dataset, and then keras to fit a simple neural-net model
 to that same data. The main purpose of this demo is illustrate usage of all the
 key elements of the datascience.com platform, namely, to use a notebook to train a predictive
-model, exposing that model via an API, and ...
+model, exposing that model via an API, publishing a report that plots some output, and...
 
 ### session settings:
 
@@ -115,29 +115,45 @@ so the model reports that a record having (x,y)=(1,2) is most likely class O, wi
 If instead you get "curl: (60) SSL certificate problem: unable to get local issuer certificate"
 add -k option to curl command.
 
-###publish report
 
-First open a terminal and then tell jupyter notebook about the jupyter dashboards:
+### publish a report
+
+Execute _confidence_levels.ipynb_ to generate the report's contents, which includes a plot of the distribution of
+the MLP model's confidence scores<br />
+![](figs/mlp_confidence_scores.png)<br />
+and a redraw of the model's decision boundaries with dot intensity indicating model confidence:<br />
+![](figs/mlp_confidence_boundary.png)<br />
+The densest dots have confidence score > 0.8, intermediate dots have 0.65 < score < 0.8,
+and the lightest dots have score < 0.65.
+
+To publish that notebook's contents, click Publish a Report and use these settings:
+
+    file=confidence_levels.ipynb
+    Title=MLP Confidence Levels
+    Description=MLP model's confidence levels
+    
+
+### jupyter dashboard
+
+Jupyter-dashboard is an extension that was added on launch via pip_install.txt. To manually
+turn it on, start a terminal and then tell jupyter notebook about the jupyter dashboards:
 
     sudo jupyter dashboards quick-setup --sys-prefix
 
-and execute _confidence_levels.ipynb_
+and then execute _confidence_levels.ipynb_ and click the new dashboard icon:<br />
+![](figs/dashboard.png)<br />
 
 ### todo
 
-1 publish a report or dashboard
-
 3 add hashed password
 
-4 try training model on polar rather than cartesian coordinates, that might boost
-model accuracy
 
 ### notes
 
 1 The MLP model was first trained on the (x,y) cartesian coordinates, and that model
 was as accurate as the SVM model. Then MLP was trained on the (r,angle) polar
-coordinates, that model was less accurate. Current MLP model is now trained on 
-the redundant set of (x,y,r,angle) data, and is as good as SVM.
+coordinates, that model was less accurate. Also trained MLP model on  the redundant set of
+(x,y,r,angle) data, no improvement.
 
 2 training MLP model on bit-mapped (x,y) input data might improve model accuracy. 
 Using bit-mapped input + convolution neural net (rather than MLP) might be even better
