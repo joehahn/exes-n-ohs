@@ -70,12 +70,12 @@ dropout fractions of 0.2 and 0.1
 The MLP model is then trained on a much larger sample of records, 2 million,
 and that trained  model is then used to compute its decision boundary:<br />
 ![](figs/mlp_decision_boundary.png)<br />
-which looks quite similar to that produced by the SVM model, and has a similar
+which looks quite similar to that produced by the SVM model with similar
 accuracy.
 
 This MLP model's hyperparameters are the number of hidden layers (currently 3) and
 the number of neurons in each hidden layer (16, 32, and 12) as well as the dropout_fractions.
-Manually explored many such models having more or less layers and neurons, as well as
+Manually exploring many such models having more or less layers and neurons, as well as
 taller & narrower neural nets (which have fewer neurons spread across more layers)
 reveals that taller/narrow nets are more performant than shorter/fatter ones.
 Nonetheless the MLP model user here does not outperform the SVM model, which is kinda dissapointing.
@@ -89,11 +89,11 @@ The script _mlp_model_api.py_ also wraps an API around the MLP model's predict m
 and that API is deployed with these settings:
 
     API Name=exes-n-ohs-api
-    description=API that calls the MLP model built by the exes-n-ohs demo
+    description=API for calling the MLP model built by the exes-n-ohs demo
     model to deploy=mlp_model_api.py
-    compute resource=m4.xlarge
+    #compute resource=m4.xlarge
+    compute resource=always on, 0.5GB 0.5CPU
     environment=keras & tensorflow
-    add requirement > pip=pip_install.txt
     Specify Function=api_predict
     Example Data={"data":{"x":1.0, "y":2.0}}
 
@@ -111,6 +111,9 @@ which should report something like
     }
 
 so the model reports that a record having (x,y)=(1,2) is most likely class O, with confidence score 54.7%.
+
+If instead you get "curl: (60) SSL certificate problem: unable to get local issuer certificate"
+add -k option to curl command.
 
 ### todo
 
