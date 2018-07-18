@@ -140,7 +140,8 @@ turn it on, a terminal and then tell jupyter notebook about the jupyter dashboar
 
     sudo jupyter dashboards quick-setup --sys-prefix
 
-and then execute _confidence_levels.ipynb_ and click the new dashboard icon
+and then execute _confidence_levels.ipynb_ and click the new dashboard icon:<br />
+![](figs/dashboard.png)<br />
 
 ### todo
 
