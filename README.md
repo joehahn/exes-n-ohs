@@ -131,7 +131,7 @@ was as accurate as the SVM model. Then MLP was trained on the (r,angle) polar
 coordinates, that model was less accurate. Current MLP model is now trained on 
 the redundant set of (x,y,r,angle) data, and is as good as SVM.
 
-1 training MLP model on bit-mapped (x,y) input data might improve model accuracy. 
+2 training MLP model on bit-mapped (x,y) input data might improve model accuracy. 
 Using bit-mapped input + convolution neural net (rather than MLP) might be even better
 
 3 install jupyter-tensorboard ...didnt work
@@ -145,7 +145,11 @@ Using bit-mapped input + convolution neural net (rather than MLP) might be even 
     tensorboard --logdir=tf_logs/
     http://52.89.99.15:6006
 
-4 force a git pull:
+4 to install pip install jupyter_dashboards:
+
+    pip install jupyter_dashboards
+
+5 force a git pull:
 
     git fetch --all
     git reset --hard origin/master

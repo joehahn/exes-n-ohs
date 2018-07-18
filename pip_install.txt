@@ -1,1 +1,2 @@
 jupyter-tensorboard
+jupyter_dashboards
