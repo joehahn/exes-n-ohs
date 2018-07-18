@@ -74,14 +74,14 @@ which looks quite similar to that produced by the SVM model, and has a similar
 accuracy.
 
 This MLP model's hyperparameters are the number of hidden layers (currently 3) and
-the number of neurons in each hidden layer (10, 60, and 20) as well as the dropout_fraction.
-I manually explored many such models have more or less layers and neurons, and found that
+the number of neurons in each hidden layer (16, 32, and 12) as well as the dropout_fractions.
+Manually explored many such models having more or less layers and neurons, as well as
 taller & narrower neural nets (which have fewer neurons spread across more layers)
-were more performant than shorter fatter nets. Nonetheless the MLP model shown
-here does not outperform the SVM model, which is kinda dissapointing...
+reveals that taller/narrow nets are more performant than shorter/fatter ones.
+Nonetheless the MLP model user here does not outperform the SVM model, which is kinda dissapointing.
+Bitmapping the input (x,y) coordinates and using a convolution neural net (rather than MLP)
+might yield a more accurate model.
 
-Adding another layer might boost MLP accuracy on the green X class. Or maybe
-boosting the green's representation in the training dataset. Still in progress...
 
 ### deploy model API
 
