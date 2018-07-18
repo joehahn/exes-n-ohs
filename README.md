@@ -45,7 +45,7 @@ causes considerable bleed between adjacent classes.
 This notebook then trains an SVM classifier to predict
 X,O,B membership using a similarly noisy sample of training data. The notebook
 also optimizes that model's hyperparameters, and that optimized classifier achieves
-an accuracy of about 67%, with the model's inferred decision boundary shown below:<br />
+an accuracy of about 68%, with the model's inferred decision boundary shown below:<br />
 ![](figs/svm_decision_boundary.png)<br />
 Comparing the model-inferred decision boundary (above) to the system's actual decision
 boundary (topmost plot) shows that the SVM model consistently overestimates the width
@@ -67,11 +67,11 @@ each record's class probabilities. And to manage any overfitting, dropout
 layers are also sandwiched between some of the hidden layers with
 dropout fractions of 0.2 and 0.1
 
-The MLP model is then trained on a much larger sample of records, 10 million,
+The MLP model is then trained on a much larger sample of records, 2 million,
 and that trained  model is then used to compute its decision boundary:<br />
 ![](figs/mlp_decision_boundary.png)<br />
-which looks quite similar to that produced by the SVM model. However the MLP model's
-accuracy, 61%, is a bit lower than SVM.
+which looks quite similar to that produced by the SVM model, and has a similar
+accuracy.
 
 This MLP model's hyperparameters are the number of hidden layers (currently 3) and
 the number of neurons in each hidden layer (10, 60, and 20) as well as the dropout_fraction.
