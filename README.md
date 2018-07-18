@@ -10,7 +10,7 @@ in the cloud, first using scikit-learn to fit a support vector machine (SVM) mod
 to a simple but rather noisy dataset, and then keras to fit a simple neural-net model
 to that same data. The main purpose of this demo is illustrate usage of all the
 key elements of the datascience.com platform, namely, to use a notebook to train a predictive
-model, exposing that model via an API, and ...
+model, exposing that model via an API, publishing a report showing some output, and...
 
 ### session settings:
 
@@ -142,7 +142,6 @@ and then execute _confidence_levels.ipynb_ and click the new dashboard icon
 
 ### todo
 
-
 3 add hashed password
 
 
@@ -150,8 +149,8 @@ and then execute _confidence_levels.ipynb_ and click the new dashboard icon
 
 1 The MLP model was first trained on the (x,y) cartesian coordinates, and that model
 was as accurate as the SVM model. Then MLP was trained on the (r,angle) polar
-coordinates, that model was less accurate. Current MLP model is now trained on 
-the redundant set of (x,y,r,angle) data, and is as good as SVM.
+coordinates, that model was less accurate. Also trained MLP model on  the redundant set of
+(x,y,r,angle) data, no improvement.
 
 2 training MLP model on bit-mapped (x,y) input data might improve model accuracy. 
 Using bit-mapped input + convolution neural net (rather than MLP) might be even better
