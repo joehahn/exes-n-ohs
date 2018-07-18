@@ -136,7 +136,7 @@ To publish that notebook's contents, click Publish a Report and use these settin
 ### jupyter dashboard
 
 Jupyter-dashboard is an extension that was added on launch via pip_install.txt. To manually
-turn it on, a terminal and then tell jupyter notebook about the jupyter dashboards:
+turn it on, start a terminal and then tell jupyter notebook about the jupyter dashboards:
 
     sudo jupyter dashboards quick-setup --sys-prefix
 
