@@ -60,12 +60,12 @@ other such library. Execute the _mlp_model.ipynb_ notebook to generate
 the following summary report that describes the MLP model built here:<br />
 ![](figs/mlp_summary.png)<br />
 which shows that this neural net has five layers, an input layer having N=2 neurons
-that receive each record's (x,y) coordinates, three densely-connected
-hidden layers composed of N=10, 60, and then 20 neurons,
+to receive each record's (x,y) coordinates, three densely-connected
+hidden layers composed of N=16, 32, and then 12 neurons,
 followed by an N=3 neuron layer that outputs
 each record's class probabilities. And to manage any overfitting, dropout
-layers are also sandwiched between each of the above dense layers
-with dropout_fraction=0.1
+layers are also sandwiched between some of the hidden layers with
+dropout fractions of 0.2 and 0.1
 
 The MLP model is then trained on a much larger sample of records, 10 million,
 and that trained  model is then used to compute its decision boundary:<br />
