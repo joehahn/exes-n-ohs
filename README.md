@@ -10,7 +10,8 @@ in the cloud, first using scikit-learn to fit a support vector machine (SVM) mod
 to a simple but rather noisy dataset, and then keras to fit a simple neural-net model
 to that same data. The main purpose of this demo is illustrate usage of all the
 key elements of the datascience.com platform, namely, to use a notebook to train a predictive
-model, exposing that model via an API, publishing a report that plots some output, and...
+model, exposing that model via an API, publishing a report that plots some output, and
+using environmental variables to keep passwords confidential.
 
 ### session settings:
 
