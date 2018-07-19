@@ -10,7 +10,8 @@ in the cloud, first using scikit-learn to fit a support vector machine (SVM) mod
 to a simple but rather noisy dataset, and then keras to fit a simple neural-net model
 to that same data. The main purpose of this demo is illustrate usage of all the
 key elements of the datascience.com platform, namely, to use a notebook to train a predictive
-model, exposing that model via an API, publishing a report that plots some output, and...
+model, exposing that model via an API, publishing a report that plots some output, and
+using environmental variables to keep passwords confidential.
 
 ### session settings:
 
@@ -100,8 +101,8 @@ and that API is deployed with these settings:
 To test that API, use curl to feed a pair of jsonized x,y coordinates into that API's url:
 
     curl -L -X POST -d '{"data":{"x":1.0, "y":2.0}}' -H 'Content-Type: application/json' \
-        -H'Cookie: datascience-platform=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI0MWI5YmM4YS0xMmI0LTRiOTgtYTNmNy00NzcxYmJhZGIyMzEiLCJzZXJ2aWNlTmFtZSI6ImRlcGxveS1leGVzLW4tb2hzLWFwaS0xOTY2LXYyIiwiaWF0IjoxNTMxNTA2NzAyfQ.4fEiEYjBFHj9MxeW5SyYMg9FQrp9glvN8D6GAh9rrco' \
-        https://demo-next.datascience.com/deploy/deploy-exes-n-ohs-api-1966-v2/
+        -H 'Cookie: datascience-platform=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIyOWJmZmFhMy1hOTVmLTQxMjItOWNlMy04OWI5M2EyODE4MDUiLCJzZXJ2aWNlTmFtZSI6ImRlcGxveS1leGVzLW4tb2hzLWFwaS0zMTg3NzEtdjEiLCJpYXQiOjE1MzIwMjk5ODZ9.eWffdsEOzYN-zHTeGl1FRlnQcdemFGogzGPj72pxBhI'  \
+        https://demo-next.datascience.com/deploy/deploy-exes-n-ohs-api-318771-v1/
 
 which should report something like
 
@@ -110,7 +111,7 @@ which should report something like
       "class_prob": "0.592"
     }
 
-so the model reports that a record having (x,y)=(1,2) is most likely class O, with confidence score 59.2%.
+so the model reports that a record having (x,y)=(1,2) is most likely class O with confidence score 59.2%.
 
 If instead you get "curl: (60) SSL certificate problem: unable to get local issuer certificate"
 add -k option to curl command.
