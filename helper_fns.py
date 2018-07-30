@@ -58,3 +58,15 @@ def make_xo_df(N_dots, initial_id, x_half_width, radius, box_half_width, jitter)
     df.loc[df['class'] == 'O', 'O_score'] = 1.0
     df.loc[df['class'] == 'B', 'B_score'] = 1.0
     return df
+
+#rebalance XO dataset so that all classes are equally represented
+def rebalance_df(df):
+    N_class = df.groupby('class')['id'].count()
+    N_min = N_class.min()
+    df_O = df[df['class'] == 'O'].sample(n=N_min)
+    df_X = df[df['class'] == 'X'].sample(n=N_min)
+    df_B = df[df['class'] == 'B'].sample(n=N_min)
+    df = df_O.append(df_X).append(df_B)
+    df['ran_num'] = np.random.uniform(size=len(df))
+    df = df.sort_values('ran_num').reset_index(drop=True).drop(labels='ran_num', axis=1)
+    return df
