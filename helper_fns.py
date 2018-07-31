@@ -76,4 +76,3 @@ def rebalance_df(df, X_boost=None):
     df['ran_num'] = np.random.uniform(size=len(df))
     df = df.sort_values('ran_num').reset_index(drop=True).drop(labels='ran_num', axis=1)
     return df
-
