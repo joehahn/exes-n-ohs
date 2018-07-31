@@ -64,10 +64,10 @@ the following summary report that describes the CNET model built here:<br />
 so this neural net is a pair of convolution + pooling layers,
 and such networks are typically used on image data. Note that our task--which is
 to classify a pair of (x,y) coordinates--is akin to performing image classification
-on images containing a single nonzero pixel, and is why CNET model is used here.
-But our CNET model also has a singe dense input layer of N=10^2 neurons that
-is then reshaped into a 10x10 grid, and its purpose is to recast
-the (x,y) input as a onehot-encoded image grid
+on images having a single nonzero pixel, and is why CNET model is used here.
+But our CNET model also has a singe dense input layer having N=10^2 neurons that
+is then reshaped into a 10x10 grid, and its purpose is to onehot-encode
+the (x,y) input across a 10x10 image.
 
 five layers, an input layer having N=2 neurons
 to receive each record's (x,y) coordinates, three densely-connected
