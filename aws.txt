@@ -10,11 +10,11 @@ Launch GPU instance in AWS:
     set tag Name=keras
     Launch
     create new keypair with name=keras
-    cp ~/Download/keras.pem .
-    chmod 0600 keras.pem
+    cp ~/Download/keras.pem private/.
+    chmod 0600 private/keras.pem
     
 ssh access:
-    ssh -i ./keras.pem ubuntu@ec2-34-201-105-201.compute-1.amazonaws.com  
+    ssh -i private/keras.pem ubuntu@54.211.30.0 
 
 install seaborn...not needed or doesnt work?:
     sudo pip install seaborn
@@ -26,6 +26,7 @@ get instance ID (required by jupyter):
 
 clone repo:
     git clone https://github.com/joehahn/exes-n-ohs.git
+    cd exes-n-ohs
 
 kill bitfusion jupyter:
     ps -aux | grep jupyter
@@ -34,12 +35,8 @@ kill bitfusion jupyter:
 start jupyter
     jupyter notebook
 
-browse jupyter
-    ec2-34-201-105-201.compute-1.amazonaws.com:8888
-
-clone book source code
-    git clone https://github.com/PacktPublishing/Deep-Learning-with-Keras.git
-    cd Deep-Learning-with-Keras
+browse jupyter, password=instance-id
+    54.211.30.0:8888
 
 monitor gpu usage:
     watch -n0.1 nvidia-smi
