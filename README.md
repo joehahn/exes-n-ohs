@@ -58,9 +58,9 @@ of the green X, and it also mis-classifies some actual green X records as nearby
 Now build and then train a simple multilayer perceptron (MLP) model using
 keras. Keras is my preferred tensorflow-based library, mostly because it is much
 easier to build and deploy neural network models using keras than with any
-other such library. Execute the _mlp_model.ipynb_ notebook to generate
+other such library. Execute the _cnet_model.ipynb_ notebook to generate
 the following summary report that describes the MLP model built here:<br />
-![](figs/mlp_summary.png)<br />
+![](figs/cnet_summary.png)<br />
 which shows that this neural net has five layers, an input layer having N=2 neurons
 to receive each record's (x,y) coordinates, three densely-connected
 hidden layers composed of N=16, 32, and then 12 neurons,
