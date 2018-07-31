@@ -55,13 +55,21 @@ of the green X, and it also mis-classifies some actual green X records as nearby
 
 ### build MLP neural net with keras
 
-Now build and then train a simple multilayer perceptron (MLP) model using
+Now build and then train a simple convolution neural network (CNET) model using
 keras. Keras is my preferred tensorflow-based library, mostly because it is much
 easier to build and deploy neural network models using keras than with any
 other such library. Execute the _cnet_model.ipynb_ notebook to generate
-the following summary report that describes the MLP model built here:<br />
+the following summary report that describes the CNET model built here:<br />
 ![](figs/cnet_summary.png)<br />
-which shows that this neural net has five layers, an input layer having N=2 neurons
+which shows that this neural net is a pair of convolution + pooling layers,
+and such networks are typically used on image data. Note that our task---which is
+to classify a pair of (x,y) coordinates---is akin to performing image classification
+on images containing a single nonzero pixel, and is why CNET model is used here.
+But our CNET model also has a singe dense input layer of N=10^2 neurons that
+is then reshaped into a 10x10 grid, and its purpose is to recast
+the (x,y) input as a onehot-encoded image grid
+
+five layers, an input layer having N=2 neurons
 to receive each record's (x,y) coordinates, three densely-connected
 hidden layers composed of N=16, 32, and then 12 neurons,
 followed by an N=3 neuron layer that outputs
