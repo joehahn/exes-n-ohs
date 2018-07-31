@@ -65,9 +65,9 @@ so this neural net is a pair of convolution + pooling layers,
 and such networks are typically used on image data. Note that our task--which is
 to classify a pair of (x,y) coordinates--is akin to performing image classification
 on images having a single nonzero pixel, and is why CNET model is used here.
-But our CNET model also has a singe dense input layer having N=10^2 neurons that
-is then reshaped into a 10x10 grid, and its purpose is to onehot-encode
-the (x,y) input across a 10x10 image. 
+But our CNET model also has a singe dense input layer having N=100^2 neurons that
+is then reshaped into a 100x100 grid, and its purpose is to onehot-encode
+the (x,y) input across that 100x100 grid. 
 The CNET model is then trained on the XO dataset,
 and that trained model is then used to compute its decision boundary:<br />
 ![](figs/cnet_decision_boundary.png)<br />
