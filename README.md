@@ -67,19 +67,11 @@ to classify a pair of (x,y) coordinates--is akin to performing image classificat
 on images having a single nonzero pixel, and is why CNET model is used here.
 But our CNET model also has a singe dense input layer having N=10^2 neurons that
 is then reshaped into a 10x10 grid, and its purpose is to onehot-encode
-the (x,y) input across a 10x10 image.
+the (x,y) input across a 10x10 image. 
 
-five layers, an input layer having N=2 neurons
-to receive each record's (x,y) coordinates, three densely-connected
-hidden layers composed of N=16, 32, and then 12 neurons,
-followed by an N=3 neuron layer that outputs
-each record's class probabilities. And to manage any overfitting, dropout
-layers are also sandwiched between some of the hidden layers with
-dropout fractions of 0.2 and 0.1
-
-The MLP model is then trained on a much larger sample of records, 2 million,
-and that trained  model is then used to compute its decision boundary:<br />
-![](figs/mlp_decision_boundary.png)<br />
+The CNET model is then trained on the XO dataset,
+and that trained model is then used to compute its decision boundary:<br />
+![](figs/cnet_decision_boundary.png)<br />
 which looks quite similar to that produced by the SVM model with similar
 accuracy.
 
