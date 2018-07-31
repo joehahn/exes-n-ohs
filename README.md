@@ -53,7 +53,7 @@ Comparing the model-inferred decision boundary (above) to the system's actual de
 boundary (topmost plot) shows that the SVM model consistently overestimates the width
 of the green X, and it also mis-classifies some actual green X records as nearby red O records.
 
-### build MLP neural net with keras
+### build CNET neural net with keras
 
 Now build and then train a simple convolution neural network (CNET) model using
 keras. Keras is my preferred tensorflow-based library, mostly because it is much
@@ -61,9 +61,9 @@ easier to build and deploy neural network models using keras than with any
 other such library. Execute the _cnet_model.ipynb_ notebook to generate
 the following summary report that describes the CNET model built here:<br />
 ![](figs/cnet_summary.png)<br />
-which shows that this neural net is a pair of convolution + pooling layers,
-and such networks are typically used on image data. Note that our task---which is
-to classify a pair of (x,y) coordinates---is akin to performing image classification
+so this neural net is a pair of convolution + pooling layers,
+and such networks are typically used on image data. Note that our task--which is
+to classify a pair of (x,y) coordinates--is akin to performing image classification
 on images containing a single nonzero pixel, and is why CNET model is used here.
 But our CNET model also has a singe dense input layer of N=10^2 neurons that
 is then reshaped into a 10x10 grid, and its purpose is to recast
