@@ -68,12 +68,12 @@ on images having a single nonzero pixel, and is why CNET model is used here.
 But our CNET model also has a singe dense input layer having N=10^2 neurons that
 is then reshaped into a 10x10 grid, and its purpose is to onehot-encode
 the (x,y) input across a 10x10 image. 
-
 The CNET model is then trained on the XO dataset,
 and that trained model is then used to compute its decision boundary:<br />
 ![](figs/cnet_decision_boundary.png)<br />
-which looks quite similar to that produced by the SVM model with similar
-accuracy.
+which appears to be an improvement since it does recover the green X pattern
+that evaded the SVM model. But the width of the X is still too wide, and the CNET
+model's overall accuracy is the same as the SVM model.
 
 This MLP model's hyperparameters are the number of hidden layers (currently 3) and
 the number of neurons in each hidden layer (16, 32, and 12) as well as the dropout_fractions.
