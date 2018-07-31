@@ -71,18 +71,9 @@ the (x,y) input across a 10x10 image.
 The CNET model is then trained on the XO dataset,
 and that trained model is then used to compute its decision boundary:<br />
 ![](figs/cnet_decision_boundary.png)<br />
-which appears to be an improvement since it does recover the green X pattern
-that evaded the SVM model. But the width of the X is still too wide, and the CNET
+which appears to be an improvement since the CNET does recover a complete green X pattern
+that eluded the SVM model. But the width of the X is still too wide, and the CNET
 model's overall accuracy is the same as the SVM model.
-
-This MLP model's hyperparameters are the number of hidden layers (currently 3) and
-the number of neurons in each hidden layer (16, 32, and 12) as well as the dropout_fractions.
-Manually exploring many such models having more or less layers and neurons, as well as
-taller & narrower neural nets (which have fewer neurons spread across more layers)
-reveals that taller/narrow nets are more performant than shorter/fatter ones.
-Nonetheless the MLP model user here does not outperform the SVM model, which is kinda dissapointing.
-Bitmapping the input (x,y) coordinates and using a convolution neural net (rather than MLP)
-might yield a more accurate model.
 
 
 ### deploy model API
