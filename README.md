@@ -179,6 +179,6 @@ Using bit-mapped input + convolution neural net (rather than MLP) might be even 
 ### todo
 
 1 get tensorboard up and running on datascience.com, and use it to peek at the CNET
-layers to, for example see whether its topmost dense layer is in fact onehot encoding
+layers to for example see whether its topmost dense layer is in fact onehot encoding
 the input (x,y) data
 
