@@ -155,15 +155,8 @@ Then execute _test_password.ipynb_ to confirm that notebook is aware of the pass
 
 ### notes
 
-1 The MLP model was first trained on the (x,y) cartesian coordinates, and that model
-was as accurate as the SVM model. Then MLP was trained on the (r,angle) polar
-coordinates, that model was less accurate. Also trained MLP model on  the redundant set of
-(x,y,r,angle) data, no improvement.
 
-2 training MLP model on bit-mapped (x,y) input data might improve model accuracy. 
-Using bit-mapped input + convolution neural net (rather than MLP) might be even better
-
-3 install jupyter-tensorboard ...didnt work
+1 install jupyter-tensorboard ...didnt work
 
     pip install jupyter-tensorboard
     #get external ip address:
