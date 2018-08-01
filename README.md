@@ -64,7 +64,7 @@ the following summary report that describes the CNET model built here:<br />
 so this neural net is a pair of convolution + pooling layers,
 and such networks are typically used on image data. Note that our task--which is
 to classify a pair of (x,y) coordinates--is akin to performing image classification
-on images having a single nonzero pixel, and is why CNET model is used here.
+on images having a single nonzero pixel, and is why a CNET model is used here.
 But our CNET model also has a singe dense input layer having N=100^2 neurons that
 is then reshaped into a 100x100 grid, and its purpose is to onehot-encode
 the (x,y) input across that 100x100 grid. 
@@ -176,4 +176,9 @@ Using bit-mapped input + convolution neural net (rather than MLP) might be even 
     git reset --hard origin/master
 
 
+### todo
+
+1 get tensorboard up and running on datascience.com, and use it to peek at the CNET
+layers to, for example see whether its topmost dense layer is in fact onehot encoding
+the input (x,y) data
 
