@@ -119,7 +119,8 @@ while those having scores < 0.6 are correct only about half of the time.
 And below we redraw of the model's decision boundaries with dot intensity indicating model confidence:<br />
 ![](figs/cnet_confidence_boundary.png)<br />
 with the densest dots having confidence score > 0.85, intermediate dots have 0.60 < score < 0.85,
-and the lightest dots have score < 0.60.
+and the lightest dots have score < 0.60. As expected, the model is most confident about its
+predictions in regions where the XOB classes are well seperated and class confusion is minimal.
 
 To publish that notebook's contents, click Publish a Report and use these settings:
 
