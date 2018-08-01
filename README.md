@@ -125,9 +125,13 @@ predictions in regions where the XOB classes are well seperated and class confus
 To publish that notebook's contents, click Publish a Report and use these settings:
 
     file=confidence_levels.ipynb
-    Title=MLP Confidence Levels
-    Description=MLP model's confidence levels
+    Title=CNET Confidence Levels
+    Description=CNET model's confidence levels
     
+which can then be shared via a URL like
+
+    https://demo-next.datascience.com/project/exes-n-ohs/outputs/report/cnet-confidence-levels-UG9zdFR5cGU6MjU3/versions/2
+
 
 ### jupyter dashboard
 
