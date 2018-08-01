@@ -147,10 +147,10 @@ and click its new dashboard icon:<br />
 
 ### environmental variables
 
-Store database passwords and AWS keys as environment variables, to avoid exposing
-confidential info via git. Click Settings > Environment Variables and enter
-Key=PASSWORD and Value=Larry's last name. Then execute _test_password.ipynb_
-to confirm that notebook is aware of the password.
+To avoid exposing confidential info via git, such as database passwords and AWS keys,
+store then in the datascience.com platform as environment variables:
+click Settings > Environment Variables and enter Key=PASSWORD and Value=Larry's last name.
+Then execute _test_password.ipynb_ to confirm that notebook is aware of the password.
 
 
 ### notes
