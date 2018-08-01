@@ -113,6 +113,8 @@ just add -k option to that curl command.
 
 Execute _confidence_levels.ipynb_ to generate the report's contents, which includes a plot of the distribution of
 the MLP model's confidence scores<br />
+As expected,  predictions having confidence scores > 0.9 can still be incorrect about 20% of the time,
+while those predictions having scores < 0.6 are correct only about half of the time.
 ![](figs/cnet_confidence_scores.png)<br />
 and a redraw of the model's decision boundaries with dot intensity indicating model confidence:<br />
 ![](figs/cnet_confidence_boundary.png)<br />
