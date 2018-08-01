@@ -64,32 +64,32 @@ the following summary report that describes the CNET model built here:<br />
 so this neural net is a pair of convolution + pooling layers,
 and such networks are typically used on image data. Note that our task--which is
 to classify a pair of (x,y) coordinates--is akin to performing image classification
-on images having a single nonzero pixel, and is why CNET model is used here.
+on images having a single nonzero pixel, and is why a CNET model is used here.
 But our CNET model also has a singe dense input layer having N=100^2 neurons that
 is then reshaped into a 100x100 grid, and its purpose is to onehot-encode
 the (x,y) input across that 100x100 grid. 
 The CNET model is then trained on the XO dataset,
 and that trained model is then used to compute its decision boundary:<br />
 ![](figs/cnet_decision_boundary.png)<br />
-which appears to be an improvement since the CNET does recover a complete green X pattern
-that eluded the SVM model. But the width of the X is still too wide, and so the CNET
-model's overall accuracy is the same as the SVM model.
+which is an improvement since the CNET does recover a complete green X pattern
+that had eluded the SVM model. But the width of the X is still too wide, and the CNET
+model's overall accuracy is about the same as the SVM model.
 
 
 ### deploy model API
 
-The script _mlp_model_api.py_ also wraps an API around the MLP model's predict method,
-and that API is deployed with these settings:
+The script _cnet_model_api.py_ to wrap an API around the CNET model's predict method,
+with that API is deployed with these settings:
 
     API Name=exes-n-ohs-api
-    description=API for calling the MLP model built by the exes-n-ohs demo
-    model to deploy=mlp_model_api.py
+    description=API for calling the CNET model built by the exes-n-ohs demo
+    model to deploy=cnet_model_api.py
     compute resource=always on, 0.5GB 0.5CPU
     environment=keras & tensorflow
     Specify Function=api_predict
     Example Data={"data":{"x":1.0, "y":2.0}}
 
-To test that API, use curl to feed a pair of jsonized x,y coordinates into that API's url:
+Then test that API by using curl to feed a pair of jsonized x,y coordinates into that API's url:
 
     curl -L -X POST -d '{"data":{"x":1.0, "y":2.0}}' -H 'Content-Type: application/json' \
         -H 'Cookie: datascience-platform=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIyOWJmZmFhMy1hOTVmLTQxMjItOWNlMy04OWI5M2EyODE4MDUiLCJzZXJ2aWNlTmFtZSI6ImRlcGxveS1leGVzLW4tb2hzLWFwaS0zMTg3NzEtdjEiLCJpYXQiOjE1MzIwMjk5ODZ9.eWffdsEOzYN-zHTeGl1FRlnQcdemFGogzGPj72pxBhI'  \
@@ -104,8 +104,8 @@ which should report something like
 
 so the model reports that a record having (x,y)=(1,2) is most likely class O with confidence score 59.2%.
 
-If instead you get "curl: (60) SSL certificate problem: unable to get local issuer certificate"
-add -k option to curl command.
+But if you get "curl: (60) SSL certificate problem: unable to get local issuer certificate"
+just add -k option to that curl command.
 
 
 ### publish a report
@@ -176,4 +176,9 @@ Using bit-mapped input + convolution neural net (rather than MLP) might be even 
     git reset --hard origin/master
 
 
+### todo
+
+1 get tensorboard up and running on datascience.com, and use it to peek at the CNET
+layers to for example see whether its topmost dense layer is in fact onehot encoding
+the input (x,y) data
 
