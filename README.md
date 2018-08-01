@@ -78,18 +78,18 @@ model's overall accuracy is about the same as the SVM model.
 
 ### deploy model API
 
-The script _mlp_model_api.py_ also wraps an API around the MLP model's predict method,
-and that API is deployed with these settings:
+The script _cnet_model_api.py_ to wrap an API around the CNET model's predict method,
+with that API is deployed with these settings:
 
     API Name=exes-n-ohs-api
-    description=API for calling the MLP model built by the exes-n-ohs demo
-    model to deploy=mlp_model_api.py
+    description=API for calling the CNET model built by the exes-n-ohs demo
+    model to deploy=cnet_model_api.py
     compute resource=always on, 0.5GB 0.5CPU
     environment=keras & tensorflow
     Specify Function=api_predict
     Example Data={"data":{"x":1.0, "y":2.0}}
 
-To test that API, use curl to feed a pair of jsonized x,y coordinates into that API's url:
+Then test that API by using curl to feed a pair of jsonized x,y coordinates into that API's url:
 
     curl -L -X POST -d '{"data":{"x":1.0, "y":2.0}}' -H 'Content-Type: application/json' \
         -H 'Cookie: datascience-platform=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIyOWJmZmFhMy1hOTVmLTQxMjItOWNlMy04OWI5M2EyODE4MDUiLCJzZXJ2aWNlTmFtZSI6ImRlcGxveS1leGVzLW4tb2hzLWFwaS0zMTg3NzEtdjEiLCJpYXQiOjE1MzIwMjk5ODZ9.eWffdsEOzYN-zHTeGl1FRlnQcdemFGogzGPj72pxBhI'  \
@@ -104,8 +104,8 @@ which should report something like
 
 so the model reports that a record having (x,y)=(1,2) is most likely class O with confidence score 59.2%.
 
-If instead you get "curl: (60) SSL certificate problem: unable to get local issuer certificate"
-add -k option to curl command.
+But if you get "curl: (60) SSL certificate problem: unable to get local issuer certificate"
+just add -k option to that curl command.
 
 
 ### publish a report
