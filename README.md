@@ -71,9 +71,9 @@ the (x,y) input across that 100x100 grid.
 The CNET model is then trained on the XO dataset,
 and that trained model is then used to compute its decision boundary:<br />
 ![](figs/cnet_decision_boundary.png)<br />
-which appears to be an improvement since the CNET does recover a complete green X pattern
-that eluded the SVM model. But the width of the X is still too wide, and so the CNET
-model's overall accuracy is the same as the SVM model.
+which is an improvement since the CNET does recover a complete green X pattern
+that had eluded the SVM model. But the width of the X is still too wide, and the CNET
+model's overall accuracy is about the same as the SVM model.
 
 
 ### deploy model API
