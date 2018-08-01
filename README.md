@@ -27,13 +27,13 @@ These settings are used when launching a datascience.com session:
 ### decision boundary
 
 After the datascience.com instance becomes available, use the Jupyter notebook _decision_boundaries.ipynb_
-to generate the mock (x,y) cartesian data, and then plot the mock data's system's decision boundaries.
+to generate the mock (x,y) cartesian data, and plot the mock data's system's decision boundaries.
 All records in this dataset contain simple pairs of (x,y) coordinates, with each record
 also labelled as being a member of either the X, O, or B classes depending
 upon where its (x,y) coordinates reside within following decision boundary:<br />
 ![](figs/decision_boundary.png)<br />
-A record is designated a member of the X class if its (x,y) coordinates
-places it within the green X. Or else it can be a member of the
+with record designated a member of the X class if its (x,y) coordinates
+places it within the green X, or else it can be a member of the
 red O class, or the blue background B class. 
 
 ### classifying noisy data
@@ -72,7 +72,7 @@ The CNET model is then trained on the XO dataset,
 and that trained model is then used to compute its decision boundary:<br />
 ![](figs/cnet_decision_boundary.png)<br />
 which appears to be an improvement since the CNET does recover a complete green X pattern
-that eluded the SVM model. But the width of the X is still too wide, and the CNET
+that eluded the SVM model. But the width of the X is still too wide, and so the CNET
 model's overall accuracy is the same as the SVM model.
 
 
