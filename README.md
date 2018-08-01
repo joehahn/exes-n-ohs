@@ -115,11 +115,10 @@ Execute _confidence_levels.ipynb_ to generate the report's contents, which inclu
 the MLP model's confidence scores<br />
 ![](figs/cnet_confidence_scores.png)<br />
 As expected,  predictions having confidence scores > 0.9 can still be incorrect about 20% of the time,
-while those predictions having scores < 0.6 are correct only about half of the time.
-
-and a redraw of the model's decision boundaries with dot intensity indicating model confidence:<br />
+while those having scores < 0.6 are correct only about half of the time.
+And below we redraw of the model's decision boundaries with dot intensity indicating model confidence:<br />
 ![](figs/cnet_confidence_boundary.png)<br />
-The densest dots have confidence score > 0.85, intermediate dots have 0.60 < score < 0.85,
+with the densest dots having confidence score > 0.85, intermediate dots have 0.60 < score < 0.85,
 and the lightest dots have score < 0.60.
 
 To publish that notebook's contents, click Publish a Report and use these settings:
