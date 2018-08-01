@@ -78,8 +78,8 @@ model's overall accuracy is about the same as the SVM model.
 
 ### deploy model API
 
-The script _cnet_model_api.py_ to wrap an API around the CNET model's predict method,
-with that API is deployed with these settings:
+Now use the script _cnet_model_api.py_ to wrap an API around the CNET model's predict method,
+with that API deployed using these settings:
 
     API Name=exes-n-ohs-api
     description=API for calling the CNET model built by the exes-n-ohs demo
@@ -92,17 +92,18 @@ with that API is deployed with these settings:
 Then test that API by using curl to feed a pair of jsonized x,y coordinates into that API's url:
 
     curl -L -X POST -d '{"data":{"x":1.0, "y":2.0}}' -H 'Content-Type: application/json' \
-        -H 'Cookie: datascience-platform=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIyOWJmZmFhMy1hOTVmLTQxMjItOWNlMy04OWI5M2EyODE4MDUiLCJzZXJ2aWNlTmFtZSI6ImRlcGxveS1leGVzLW4tb2hzLWFwaS0zMTg3NzEtdjEiLCJpYXQiOjE1MzIwMjk5ODZ9.eWffdsEOzYN-zHTeGl1FRlnQcdemFGogzGPj72pxBhI'  \
-        https://demo-next.datascience.com/deploy/deploy-exes-n-ohs-api-318771-v1/
+        -H 'Cookie: datascience-platform=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJkNDE5MmNhZS00ZGMxLTQ0MjUtOWIwNy0wMmZjNGE5YzQxODEiLCJzZXJ2aWNlTmFtZSI6ImRlcGxveS1leGVzLW4tb2hzLWFwaS0zNDI5MDEtdjEiLCJpYXQiOjE1MzMxNDU5MzZ9.CODpoPRdWzYa3hlv1osArKrYsv3AB4gTuwOX_S2WGpY' \
+        https://demo-next.datascience.com/deploy/deploy-exes-n-ohs-api-342901-v1/
 
 which should report something like
 
     {
-      "class_pred": "O", 
-      "class_prob": "0.592"
+      "class_pred": "X", 
+      "class_prob": "0.537"
     }
 
-so the model reports that a record having (x,y)=(1,2) is most likely class O with confidence score 59.2%.
+which says that the model thinks that a record having (x,y)=(1,2) is most likely class X
+with confidence score 53.7%.
 
 But if you get "curl: (60) SSL certificate problem: unable to get local issuer certificate"
 just add -k option to that curl command.
