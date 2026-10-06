@@ -1,7 +1,7 @@
 # exes-n-ohs
 
 by Joe Hahn,<br />
-joe.hahn@oracle.com,<br />
+joe.hahn@jmh-datasciences.com,<br />
 5 July 2018<br />
 git branch=master
 
